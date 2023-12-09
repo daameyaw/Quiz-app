@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #f3f3f3;
+  color: #777; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem; }
+  .header__message {
+    font-size: 2rem;
+    font-weight: 500; }
+  .header__logo img {
+    width: 100%;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100px; }
+  .header__user-box {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .header__user-photo {
+    width: 100%;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100px;
+    margin-right: 2rem; }
+
+.main {
+  margin: 4rem auto;
+  max-width: 100rem;
+  height: 80rem; }
+
+.select {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem; }
+  .select__item {
+    margin-top: 2rem; }
+    .select__item-link:link, .select__item-link:visited {
+      display: flex;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      background-color: #ffa94d;
+      padding: 0.5rem 2rem;
+      border-radius: 100px;
+      margin-right: 2.2rem;
+      transition: all 0.2s; }
+      .select__item-link:link:not(:last-child), .select__item-link:visited:not(:last-child) {
+        margin-right: 2.2rem; }
+    .select__item-icon {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 0.5rem;
+      color: #777; }
+    .select__item-html:link {
+      background-image: linear-gradient(to right, #ffa94d, #ffe8cc);
+      background-color: #ffa94d; }
+    .select__item-css:link {
+      background-image: linear-gradient(to right, #a5d8ff, #4dabf7); }
+    .select__item-javascript:link {
+      background-image: linear-gradient(to left, #fff3bf, #4dabf7); }
+
+.quiz {
+  width: 50%;
+  margin: 0 auto;
+  height: 60rem; }
+  .quiz__number {
+    padding-top: 7rem; }
+
+.question {
+  padding: 2rem 4rem;
+  margin-bottom: 1.5rem; }
+  .question__text {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #444; }
+  .question__options {
+    font-size: 1.7rem;
+    border: none;
+    padding: 1.5rem 3rem 1.5rem 0.3rem;
+    background-color: #777;
+    border-radius: 100px;
+    width: 84%;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    text-align: left;
+    display: block; }
+    .question__options p {
+      text-align: left; }
+  .question__timer {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0.5px solid black;
+    border-radius: 100px; }
