@@ -68,18 +68,26 @@ body {
       transition: all 0.2s; }
       .select__item-link:link:not(:last-child), .select__item-link:visited:not(:last-child) {
         margin-right: 2.2rem; }
+    .select__item-link:hover {
+      transform: translateY(-0.5rem); }
+    .select__item-link:active {
+      transform: translateY(0); }
     .select__item-icon {
       height: 2rem;
       width: 2rem;
       margin-right: 0.5rem;
       color: #777; }
     .select__item-html:link {
-      background-image: linear-gradient(to right, #ffa94d, #ffe8cc);
+      background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
       background-color: #ffa94d; }
     .select__item-css:link {
       background-image: linear-gradient(to right, #a5d8ff, #4dabf7); }
     .select__item-javascript:link {
-      background-image: linear-gradient(to left, #fff3bf, #4dabf7); }
+      background-image: linear-gradient(to right, #ffe066, #fab005); }
+    .select__item-react:link {
+      background-image: linear-gradient(to right, #66d9e8, #1098ad); }
+    .select__item-nodejs:link {
+      background-image: linear-gradient(to right, #69db7c, #37b24d); }
 
 .quiz {
   width: 50%;

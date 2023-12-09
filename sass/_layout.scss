@@ -64,6 +64,13 @@
       }
     }
 
+    &-link:hover {
+      transform: translateY(-0.5rem);
+    }
+    &-link:active {
+      transform: translateY(0);
+    }
+
     &-icon {
       height: 2rem;
       width: 2rem;
@@ -72,7 +79,7 @@
     }
 
     &-html:link {
-      background-image: linear-gradient(to right, #ffa94d, #ffe8cc);
+      background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
 
       background-color: #ffa94d;
     }
@@ -81,7 +88,14 @@
     }
 
     &-javascript:link {
-      background-image: linear-gradient(to left, #fff3bf, #4dabf7);
+      background-image: linear-gradient(to right, #ffe066, #fab005);
+    }
+
+    &-react:link {
+      background-image: linear-gradient(to right, #66d9e8, #1098ad);
+    }
+    &-nodejs:link {
+      background-image: linear-gradient(to right, #69db7c, #37b24d);
     }
 
     // &-link:hover {
