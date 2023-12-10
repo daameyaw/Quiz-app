@@ -71,14 +71,25 @@
       </div>
       <div class="quiz">
         <div class="question">
-          <h4 class="quiz__number">Question 1/15</h4>
+          <div class="quiz__number">Question 1/15</div>
           <p class="question__text">What is javascript?</p>
+          <button class="question__options">
+            <p>Programming Language</p>
+          </button>
+          <button class="question__options"><p>Markup language</p></button>
           <button class="question__options"><p>Programming Language</p></button>
           <button class="question__options"><p>Programming Language</p></button>
-          <button class="question__options"><p>Programming Language</p></button>
-          <button class="question__options"><p>Programming Language</p></button>
-          <div class="question__timer">4:00</div>
+          <div class="question__btns">
+            <div class="question__timer">4:00</div>
+            <div class="question__prevnext">
+              <button class="question__prevnext--prev">previous</button>
+              <button class="question__prevnext--next">next</button>
+            </div>
+          </div>
         </div>
+
+        <div class="quiz__finish">finish</div>
+        <button class="quiz__submit">submit</button>
       </div>
     </div>
     <script
