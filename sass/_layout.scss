@@ -36,12 +36,17 @@
   height: 80rem;
 }
 
+.select-menu {
+  max-width: 99rem;
+}
+
 .select {
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
+  flex-wrap: wrap;
 
   &__item {
     margin-top: 2rem;
@@ -79,7 +84,7 @@
     }
 
     &-html:link {
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+      background-image: linear-gradient(to right, #fff, black);
     }
     &-css:link {
       background-image: linear-gradient(to right, #a5d8ff, #4dabf7);
@@ -140,7 +145,7 @@
       display: block;
       content: "";
       height: 1px;
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+      background-image: linear-gradient(to right, #fff, black);
     }
   }
 
@@ -158,7 +163,7 @@
       display: block;
       content: "";
       height: 1px;
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+      background-image: linear-gradient(to right, #fff, black);
     }
   }
 
@@ -172,7 +177,7 @@
     margin-top: 2rem;
 
     &:hover {
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+      background-image: linear-gradient(to right, #fff, black);
     }
   }
 }
@@ -198,7 +203,7 @@
     padding-left: 2rem;
     text-align: left;
     display: block;
-    background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+    background-image: linear-gradient(to right, #fff, black);
     transition: all 0.2s;
 
     & p {
@@ -226,7 +231,7 @@
     border: none;
     padding: 1rem 1.5rem;
     border-radius: 100px;
-    background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+    background-image: linear-gradient(to right, #fff, black);
   }
 
   &__timer {

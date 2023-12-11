@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #777;
-  background-image: linear-gradient(to right bottom, #ffe8cc, #ffa94d); }
+  background-image: linear-gradient(to right bottom, #f8f9fa, #e9ecef); }
 
 .header {
   display: flex;
@@ -47,12 +47,16 @@ body {
   max-width: 100rem;
   height: 80rem; }
 
+.select-menu {
+  max-width: 99rem; }
+
 .select {
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem; }
+  padding-top: 2rem;
+  flex-wrap: wrap; }
   .select__item {
     margin-top: 2rem; }
     .select__item-link:link, .select__item-link:visited {
@@ -78,7 +82,7 @@ body {
       margin-right: 0.5rem;
       color: #777; }
     .select__item-html:link {
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d); }
+      background-image: linear-gradient(to right, #fff, black); }
     .select__item-css:link {
       background-image: linear-gradient(to right, #a5d8ff, #4dabf7); }
     .select__item-javascript:link {
@@ -104,7 +108,7 @@ body {
       display: block;
       content: "";
       height: 1px;
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d); }
+      background-image: linear-gradient(to right, #fff, black); }
   .quiz__finish {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
@@ -117,7 +121,7 @@ body {
       display: block;
       content: "";
       height: 1px;
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d); }
+      background-image: linear-gradient(to right, #fff, black); }
   .quiz__submit {
     border: none;
     padding: 1.5rem 3rem;
@@ -127,7 +131,7 @@ body {
     text-transform: uppercase;
     margin-top: 2rem; }
     .quiz__submit:hover {
-      background-image: linear-gradient(to right, #ffe8cc, #ffa94d); }
+      background-image: linear-gradient(to right, #fff, black); }
 
 .question {
   padding: 2rem 4rem;
@@ -148,7 +152,7 @@ body {
     padding-left: 2rem;
     text-align: left;
     display: block;
-    background-image: linear-gradient(to right, #ffe8cc, #ffa94d);
+    background-image: linear-gradient(to right, #fff, black);
     transition: all 0.2s; }
     .question__options p {
       text-align: left; }
@@ -166,7 +170,7 @@ body {
     border: none;
     padding: 1rem 1.5rem;
     border-radius: 100px;
-    background-image: linear-gradient(to right, #ffe8cc, #ffa94d); }
+    background-image: linear-gradient(to right, #fff, black); }
   .question__timer {
     font-size: 2rem;
     display: inline-block;
