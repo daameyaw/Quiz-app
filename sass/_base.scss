@@ -20,7 +20,27 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  // background-color: #f3f3f3;
+  background-color: #e3fafc;
   color: #777;
-  background-image: linear-gradient(to right bottom, #f8f9fa, #e9ecef);
+  background-image: linear-gradient(to right bottom, #ebfafb, #d8f4f8);
+}
+
+//UTILITIES
+.linux {
+  background-image: linear-gradient(to right, #fff, #343a40);
+}
+.devops {
+  background-image: linear-gradient(to right, #d0bfff, #b197fc);
+}
+.wordpress {
+  background-image: linear-gradient(to right, #a5d8ff, #339af0);
+}
+.laravel {
+  background-image: linear-gradient(to right, #ff8787, #fa5252);
+}
+.sql {
+  background-image: linear-gradient(to right, #ffa94d, #e8590c);
+}
+.javascript {
+  background-image: linear-gradient(to right, #ffec99, #fab005);
 }

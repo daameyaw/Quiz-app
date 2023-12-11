@@ -82,28 +82,6 @@
       margin-right: 0.5rem;
       color: #777;
     }
-
-    &-html:link {
-      background-image: linear-gradient(to right, #fff, black);
-    }
-    &-css:link {
-      background-image: linear-gradient(to right, #a5d8ff, #4dabf7);
-    }
-
-    &-javascript:link {
-      background-image: linear-gradient(to right, #ffe066, #fab005);
-    }
-
-    &-react:link {
-      background-image: linear-gradient(to right, #66d9e8, #1098ad);
-    }
-    &-nodejs:link {
-      background-image: linear-gradient(to right, #69db7c, #37b24d);
-    }
-
-    // &-link:hover {
-
-    // }
   }
 }
 
@@ -145,7 +123,7 @@
       display: block;
       content: "";
       height: 1px;
-      background-image: linear-gradient(to right, #fff, black);
+      // background-image: linear-gradient(to right, #fff, black);
     }
   }
 
@@ -163,7 +141,7 @@
       display: block;
       content: "";
       height: 1px;
-      background-image: linear-gradient(to right, #fff, black);
+      background-image: linear-gradient(to right, #c5f6fa, #99e9f2);
     }
   }
 
@@ -171,13 +149,13 @@
     border: none;
     padding: 1.5rem 3rem;
     width: 100%;
-    border: 1px solid #ffe8cc;
+    border: 1px solid #ebfafb;
     border-radius: 100px;
     text-transform: uppercase;
     margin-top: 2rem;
 
     &:hover {
-      background-image: linear-gradient(to right, #fff, black);
+      background-image: linear-gradient(to right, #c5f6fa, #99e9f2);
     }
   }
 }
@@ -203,7 +181,7 @@
     padding-left: 2rem;
     text-align: left;
     display: block;
-    background-image: linear-gradient(to right, #fff, black);
+    background-image: linear-gradient(to right, #c5f6fa, #99e9f2);
     transition: all 0.2s;
 
     & p {
@@ -231,15 +209,32 @@
     border: none;
     padding: 1rem 1.5rem;
     border-radius: 100px;
-    background-image: linear-gradient(to right, #fff, black);
+    background-image: linear-gradient(to right, #c5f6fa, #99e9f2);
   }
 
   &__timer {
     font-size: 2rem;
     display: inline-block;
     padding: 0.5rem 1rem;
-    border: 0.5px solid black;
+    border: 0.5px solid #99e9f2;
     border-radius: 100px;
     // margin-right: 23rem;
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
