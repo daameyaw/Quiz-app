@@ -219,8 +219,10 @@ body {
   opacity: 0; }
 
 .popup {
-  background-image: url(../img/popup-edited.jpg);
+  background-image: url(../img/vandan-patel-TPn8jvj4PYo-unsplash.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   background-color: #fff;
   width: 80rem;
@@ -230,10 +232,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+  .popup__close-btn {
+    font-size: 3.5rem;
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    color: black; }
   .popup h3 {
     font-size: 3rem;
     text-transform: uppercase;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    color: black; }
   .popup h4 {
     font-size: 2.5rem;
     margin-top: 1.2rem;
@@ -241,7 +250,8 @@ body {
     text-transform: uppercase; }
   .popup__number-heading {
     font-size: 2rem;
-    margin-bottom: 1.7rem; }
+    margin-bottom: 1.7rem;
+    color: black; }
   .popup__number-form {
     display: flex;
     align-items: center; }
@@ -255,7 +265,9 @@ body {
     text-transform: uppercase;
     padding: 1rem 2rem;
     border-radius: 100px;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    font-weight: 700;
+    letter-spacing: 0.1rem; }
     .popup__submit:hover {
       transform: translateY(-0.5rem);
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25); }
@@ -264,13 +276,18 @@ body {
       box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1); }
 
 .submit-popup {
+  background-image: url(../img/nordwood-themes-kRNZiGKtz48-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
   position: absolute;
   width: 80rem;
+  border-radius: 45px;
   background-color: #fff;
-  padding: 6.5rem 4rem;
+  padding: 9.5rem 6rem;
   margin: 0 auto;
   top: 50%;
   left: 50%;
@@ -284,3 +301,22 @@ body {
     font-size: 1.8rem;
     line-height: 1.8;
     color: #777; }
+  .submit-popup__btn {
+    margin-top: 2.5rem;
+    border: none;
+    border-radius: 100px;
+    text-transform: uppercase;
+    padding: 1.2rem 2rem;
+    transition: all 0.2s; }
+    .submit-popup__btn:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25); }
+    .submit-popup__btn:active {
+      transform: translateY(0);
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1); }
+    .submit-popup__btn:not(:last-child) {
+      margin-right: 1.5rem; }
+    .submit-popup__btn--green {
+      background-color: #69db7c; }
+    .submit-popup__btn--violet {
+      background-color: #e599f7; }

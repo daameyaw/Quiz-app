@@ -17,9 +17,9 @@
       <div class="header__message">
         <h3>Welcome back,David</h3>
       </div>
-      <div class="header__logo">
+      <!-- <div class="header__logo">
         <img src="img/20824345_6322519.jpg" alt="" />
-      </div>
+      </div> -->
       <div class="header__user-box">
         <div class="">
           <img
@@ -35,7 +35,12 @@
       <div class="select-menu">
         <div class="overlay hidden">
           <div class="popup">
-            <h3>Ready to start your Linux quiz?Let's get your quiz ready:)</h3>
+            <div class="popup__close-btn">&times</div>
+            <h3>
+              Ready to start your Linux quiz?
+              <br />
+              Let's get your quiz ready :)
+            </h3>
             <div class="popup__number">
               <p class="popup__number-heading">
                 How many questions would you like to answer?
@@ -77,16 +82,21 @@
             </div>
           </div>
         </div>
-        <div class="overlay">
+        <div class="overlay hidden">
           <div class="submit-popup">
             <div>
+              <div class="popup__close-btn">&times</div>
               <h4 class="submit-popup__heading">Are you sure?</h4>
               <p class="submit-popup__message">
                 Please review your questions and make sure you've answered on
                 all of them! There is no going back!
               </p>
-              <button class="submit-popup__btn">Return to quiz</button>
-              <button class="submit-popup__btn">Submit</button>
+              <button class="submit-popup__btn submit-popup__btn--violet">
+                Return to quiz
+              </button>
+              <button class="submit-popup__btn submit-popup__btn--green">
+                Submit
+              </button>
             </div>
             <div></div>
           </div>
