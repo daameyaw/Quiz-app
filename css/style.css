@@ -111,20 +111,6 @@ body {
       margin-right: 0.5rem;
       color: #777; }
 
-.results {
-  margin-top: 5rem;
-  background-color: #fff;
-  width: 80rem;
-  height: 33rem;
-  margin-left: 25rem; }
-  .results__icon-con {
-    text-align: center; }
-  .results__icon {
-    margin-top: 5rem;
-    text-align: center;
-    width: 5rem;
-    height: 5rem; }
-
 .quiz {
   max-width: 75%;
   margin: 0 auto;
@@ -389,3 +375,51 @@ body {
       background-color: #69db7c; }
     .submit-popup__btn--violet {
       background-color: #e599f7; }
+
+.results {
+  margin: 5rem 0 2rem 25rem;
+  background-color: #fff;
+  width: 80rem;
+  padding: 3rem; }
+  .results__icon-con {
+    text-align: center; }
+  .results__icon {
+    margin-top: 5rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem; }
+  .results__options {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.4rem;
+    background-color: #fff;
+    font-size: 1.3rem; }
+    .results__options--icon {
+      margin-left: 0.5rem;
+      color: #2b8a3e !important;
+      margin-bottom: -0.5rem; }
+  .results__text {
+    font-size: 2.2rem;
+    text-align: left; }
+  .results__score {
+    text-align: center; }
+    .results__score h3 {
+      font-size: 1.8rem;
+      text-transform: uppercase; }
+    .results__score p {
+      font-size: 1.5rem; }
+  .results__question-number {
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    grid-column-gap: 1.5rem;
+    font-size: 1.4rem;
+    color: black;
+    text-transform: uppercase; }
+    .results__question-number::before, .results__question-number::after {
+      display: block;
+      content: "";
+      height: 1px;
+      background-image: linear-gradient(to right, #c0c3c6, #909294); }
