@@ -46,3 +46,15 @@ body {
 .javascript {
   background-image: linear-gradient(to right, #ffec99, #fab005);
 }
+
+@keyframes moveupanddown {
+  0% {
+    transform: translateY(1.3rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1.3rem);
+  }
+}

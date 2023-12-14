@@ -103,12 +103,83 @@
 //   }
 
 // }
+.results {
+  margin-top: 5rem;
+  background-color: #fff;
+  // margin: 0 auto;
+  width: 80rem;
+  height: 33rem;
+  margin-left: 25rem;
+  // margin-top: 5rem;
+  // padding: 6.5rem 9rem;
+
+  &__icon-con {
+    text-align: center;
+  }
+  &__icon {
+    margin-top: 5rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    // font-size: 5rem;
+  }
+}
 
 .quiz {
   //   background-color: red;
   max-width: 75%;
   margin: 0 auto;
   height: 60rem;
+  position: relative;
+
+  &__start {
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100%;
+    display: inline-block;
+
+    // background-image:linear-gradient(105deg,
+    // rgba($color-white,.9) 0%,
+    // rgba($color-white,.9) 50%,
+    // transparent 50%),
+    // url(../img/nat-10.jpg);
+
+    &-text {
+      background-image: linear-gradient(
+        to right,
+        #343a40 0%,
+        #d0bfff 20%,
+        #a5d8ff 30%,
+        #fa5252 40%,
+        #e8590c 55%,
+        #fab005 70%,
+        #ffec99 100%
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.7;
+      // transition: all 0.3s;
+    }
+    &-icon {
+      height: 2.7rem;
+      width: 2.7rem;
+      display: inline-block;
+      color: #a5d8ff;
+
+      &--arrow {
+        animation: moveupanddown 0.9s infinite ease-in;
+      }
+      &--flash {
+        color: #fa5252;
+      }
+    }
+  }
 
   &__number {
     padding-top: 7rem;
@@ -155,6 +226,7 @@
     border-radius: 100px;
     text-transform: uppercase;
     margin-top: 2rem;
+    margin-bottom: 3rem;
 
     &:hover {
       background-image: linear-gradient(to right, #c0c3c6, #909294);
@@ -255,6 +327,7 @@
     border-radius: 15px;
     box-shadow: 0 1.2rem 6rem rgba(0, 0, 0, 0.1);
     transition: all 0.2s;
+    background-color: #f0f4f7;
 
     &:hover {
       transform: scale(1.01);

@@ -37,6 +37,14 @@ body {
 .javascript {
   background-image: linear-gradient(to right, #ffec99, #fab005); }
 
+@keyframes moveupanddown {
+  0% {
+    transform: translateY(1.3rem); }
+  50% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(1.3rem); } }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -103,10 +111,50 @@ body {
       margin-right: 0.5rem;
       color: #777; }
 
+.results {
+  margin-top: 5rem;
+  background-color: #fff;
+  width: 80rem;
+  height: 33rem;
+  margin-left: 25rem; }
+  .results__icon-con {
+    text-align: center; }
+  .results__icon {
+    margin-top: 5rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem; }
+
 .quiz {
   max-width: 75%;
   margin: 0 auto;
-  height: 60rem; }
+  height: 60rem;
+  position: relative; }
+  .quiz__start {
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100%;
+    display: inline-block; }
+    .quiz__start-text {
+      background-image: linear-gradient(to right, #343a40 0%, #d0bfff 20%, #a5d8ff 30%, #fa5252 40%, #e8590c 55%, #fab005 70%, #ffec99 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.7; }
+    .quiz__start-icon {
+      height: 2.7rem;
+      width: 2.7rem;
+      display: inline-block;
+      color: #a5d8ff; }
+      .quiz__start-icon--arrow {
+        animation: moveupanddown 0.9s infinite ease-in; }
+      .quiz__start-icon--flash {
+        color: #fa5252; }
   .quiz__number {
     padding-top: 7rem;
     display: grid;
@@ -140,7 +188,8 @@ body {
     border: 1px solid #ebfafb;
     border-radius: 100px;
     text-transform: uppercase;
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    margin-bottom: 3rem; }
     .quiz__submit:hover {
       background-image: linear-gradient(to right, #c0c3c6, #909294); }
 
@@ -212,7 +261,8 @@ body {
     margin-top: 2rem;
     border-radius: 15px;
     box-shadow: 0 1.2rem 6rem rgba(0, 0, 0, 0.1);
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    background-color: #f0f4f7; }
     .question__explanation:hover {
       transform: scale(1.01); }
     .question__explanation-heading {
