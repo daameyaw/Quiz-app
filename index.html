@@ -34,7 +34,7 @@
     </div>
     <div class="main">
       <div class="select-menu">
-        <div class="overlay hidden">
+        <div class="overlay">
           <div class="popup">
             <div class="popup__close-btn">&times</div>
             <h3>
@@ -156,6 +156,15 @@
         </ul>
       </div>
       <div class="quiz">
+        <div class="error hidden">
+          <p class="quiz__start">
+            <span class="quiz__start--imoji">😐</span
+            ><span class="quiz__start-text"
+              >Sorry quiz couldn't load.Please try again!</span
+            >
+          </p>
+        </div>
+
         <div class="quiz__start hidden">
           <p class="quiz__start-text">
             Select one of the options above
@@ -172,7 +181,7 @@
             name="flash-outline"
           ></ion-icon>
         </div>
-        <div class="question">
+        <div class="question hidden">
           <div class="quiz__number">Question 1/15</div>
           <p class="question__text">What is javascript?</p>
           <button class="question__options html">
@@ -192,16 +201,9 @@
               <button class="question__prevnext--next">next</button>
             </div>
           </div>
-          <div class="question__explanation">
-            <h3 class="question__explanation-heading">Explanation :</h3>
-            <p class="question__explanation-text">
-              Javascript is a cool language
-            </p>
-          </div>
+          <div class="quiz__finish">finish</div>
+          <button class="quiz__submit">submit</button>
         </div>
-
-        <div class="quiz__finish">finish</div>
-        <button class="quiz__submit">submit</button>
       </div>
     </div>
     <script

@@ -141,6 +141,10 @@ body {
         animation: moveupanddown 0.9s infinite ease-in; }
       .quiz__start-icon--flash {
         color: #fa5252; }
+    .quiz__start--imoji {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-right: 0.4rem; }
   .quiz__number {
     padding-top: 7rem;
     display: grid;
@@ -161,7 +165,8 @@ body {
     grid-column-gap: 1.5rem;
     font-size: 1.6rem;
     color: black;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-top: 2.5rem; }
     .quiz__finish::before, .quiz__finish::after {
       display: block;
       content: "";
@@ -175,7 +180,9 @@ body {
     border-radius: 100px;
     text-transform: uppercase;
     margin-top: 2rem;
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    background-color: #f0f4f7;
+    font-weight: 400; }
     .quiz__submit:hover {
       background-image: linear-gradient(to right, #c0c3c6, #909294); }
 
@@ -240,23 +247,6 @@ body {
     border: 0.5px solid #c0c3c6;
     border-radius: 100px;
     box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.05); }
-  .question__explanation {
-    padding: 5rem 0;
-    padding-left: 1rem;
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 1.2rem 6rem rgba(0, 0, 0, 0.1);
-    transition: all 0.2s;
-    background-color: #f0f4f7; }
-    .question__explanation:hover {
-      transform: scale(1.01); }
-    .question__explanation-heading {
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      text-align: start; }
-    .question__explanation-text {
-      font-size: 1.2rem; }
 
 .overlay {
   position: fixed;
@@ -281,7 +271,6 @@ body {
   position: absolute;
   background-color: #fff;
   max-width: 80rem;
-  border-radius: 45px;
   padding: 6.5rem 4rem;
   margin: 0 auto;
   top: 50%;
@@ -336,11 +325,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(min-content, 2fr) 1fr;
   grid-column-gap: 1rem;
   position: absolute;
   max-width: 80rem;
-  border-radius: 45px;
   background-color: #fff;
   padding: 9.5rem 6rem;
   margin: 0 auto;
@@ -377,36 +365,44 @@ body {
       background-color: #e599f7; }
 
 .results {
-  margin: 5rem 0 2rem 25rem;
   background-color: #fff;
-  width: 80rem;
+  margin: 2rem auto;
+  max-width: 80rem;
   padding: 3rem; }
   .results__icon-con {
+    margin: 0 auto;
     text-align: center; }
   .results__icon {
-    margin-top: 5rem;
+    margin-top: 2rem;
     text-align: center;
     width: 5rem;
-    height: 5rem; }
+    height: 5rem;
+    color: #444; }
   .results__options {
     border: none;
     display: flex;
     flex-direction: column;
     margin-bottom: 1.4rem;
     background-color: #fff;
-    font-size: 1.3rem; }
+    font-size: 1.5rem;
+    font-weight: 400; }
     .results__options--icon {
       margin-left: 0.5rem;
       color: #2b8a3e !important;
       margin-bottom: -0.5rem; }
   .results__text {
     font-size: 2.2rem;
-    text-align: left; }
+    text-align: left;
+    color: #444 !important;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 500; }
   .results__score {
     text-align: center; }
     .results__score h3 {
       font-size: 1.8rem;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      color: #444; }
     .results__score p {
       font-size: 1.5rem; }
   .results__question-number {
@@ -423,3 +419,40 @@ body {
       content: "";
       height: 1px;
       background-image: linear-gradient(to right, #c0c3c6, #909294); }
+  .results__container {
+    margin-left: 2rem; }
+
+.bigger {
+  display: grid;
+  column-gap: 5rem;
+  grid-template-columns: minmax(min-content, 59rem) minmax(min-content, 39rem); }
+  @media (max-width: 700px) {
+    .bigger {
+      grid-template-columns: 1fr; } }
+
+.question__explanation {
+  height: 14rem;
+  padding: 2rem;
+  padding-left: 1rem;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 1.2rem 6rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  background-color: rgba(216, 220, 222, 0.5); }
+  .question__explanation:hover {
+    transform: scale(1.01); }
+  .question__explanation-heading {
+    color: #444;
+    display: inline-block;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: left; }
+  .question__explanation-text {
+    word-wrap: break-word;
+    font-size: 1.6rem; }
+
+.error__msg {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  letter-spacing: 1.2rem; }
