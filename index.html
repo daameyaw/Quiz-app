@@ -11,6 +11,12 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <!-- <link rel="stylesheet" href="" /> -->
+    <script type="module" src="./js/controller.js"></script>
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/model.js"></script>
+    <script type="module" src="./js/views/startView.js"></script>
+    <script type="module" src="./js/views/view.js"></script>
+
     <title>Quizly</title>
   </head>
   <body>
@@ -34,7 +40,7 @@
     </div>
     <div class="main">
       <div class="select-menu">
-        <div class="overlay">
+        <div class="start hidden">
           <div class="popup">
             <div class="popup__close-btn">&times</div>
             <h3>
@@ -47,7 +53,12 @@
                 How many questions would you like to answer?
               </p>
               <form class="popup__number-form">
-                <label class="popup__number-form--label" for="checkbox-10">
+                <select name="Number" id="">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                </select>
+                <!-- <label class="popup__number-form--label" for="checkbox-10">
                   <input type="checkbox" id="checkbox-10" value="10" />
                   10
                 </label>
@@ -60,31 +71,22 @@
                 <label class="popup__number-form--label" for="checkbox-30">
                   <input type="checkbox" id="checkbox-30" value="30" />
                   30
-                </label>
+                </label> -->
               </form>
               <h4 class="popup__number-heading">difficulty</h4>
               <form class="popup__number-form">
-                <label class="popup__number-form--label" for="checkbox-10">
-                  <input type="checkbox" id="checkbox-10" value="10" />
-                  Easy
-                </label>
-
-                <label class="popup__number-form--label" for="checkbox-20">
-                  <input type="checkbox" id="checkbox-20" value="20" />
-                  Medium
-                </label>
-
-                <label class="popup__number-form--label" for="checkbox-30">
-                  <input type="checkbox" id="checkbox-30" value="30" />
-                  Hard
-                </label>
+                <select name="Number" id="">
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="difficult">Difficult</option>
+                </select>
               </form>
-              <button class="popup__submit" type="submit">
-                <a href="results.html">Submit</a>
-              </button>
+              <button class="popup__submit" type="submit">Start</button>
             </div>
           </div>
         </div>
+        <div class="overlay hidden"></div>
+
         <div class="overlay hidden">
           <div class="submit-popup">
             <div>
@@ -98,8 +100,10 @@
                 Return to quiz
               </button>
               <button class="submit-popup__btn submit-popup__btn--green">
-                Submit
+                <a href="results.html">Submit</a>
               </button>
+              <!-- <button class="popup__submit" type="submit">
+              </button> -->
             </div>
             <div></div>
           </div>

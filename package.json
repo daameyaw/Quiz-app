@@ -2,9 +2,9 @@
   "name": "quiz-app",
   "version": "1.0.0",
   "description": "",
-  "main": "controller.js",
+  "main": "index.html",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "cs": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "David",
   "license": "ISC",

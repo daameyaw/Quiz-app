@@ -1,0 +1,30 @@
+//media query manager
+/*
+0 - 600px  Phone
+600px -900px  tablet portrait
+900px - 1200px  tablet landscape
+1200px - 1800px  normal stlyes apply within this range
+
+*/
+
+// @mixin respond-phone{
+//     @media (max-width:600px){ @content};
+// }
+// $breakpoint argument choices:
+/*
+-phone
+-tab-portait
+-tab-land
+-big-desktop
+
+
+ORDER FOR RESPONSIVE
+BASE + TYPOGRAPHY
+GENERAL LAYOUT+ GRID
+PAGE LAYOUT 
+COMPONENTS
+
+
+*/
+
+/*1em = 16px)*/

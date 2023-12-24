@@ -1,0 +1,85 @@
+.question {
+  padding: 2rem 4rem;
+  margin-bottom: 1.5rem;
+
+  &__text {
+    padding: 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #444;
+  }
+  &__options {
+    font-size: 1.7rem;
+    border: none;
+    padding: 1.5rem 3rem 1.5rem 0.3rem;
+    background-color: #777;
+    border-radius: 100px;
+    min-width: 67%;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    text-align: left;
+    display: block;
+    background-image: linear-gradient(to right, #c0c3c6, #909294);
+    transition: all 0.2s;
+
+    & p {
+      text-align: left;
+    }
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    }
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+      transform: translateX(2rem) translateY(-0.5rem);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+    &:active {
+      transform: translateX(2rem) translateY(0);
+      box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__prevnext--prev {
+    margin-right: 1rem;
+  }
+  &__prevnext--prev,
+  &__prevnext--next {
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 100px;
+    background-image: linear-gradient(to right, #c0c3c6, #909294);
+    transition: all 0.2s;
+    box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    }
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__timer {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0.5px solid #c0c3c6;
+    border-radius: 100px;
+    box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.05);
+
+    // margin-right: 23rem;
+  }
+}

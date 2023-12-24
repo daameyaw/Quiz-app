@@ -1,4 +1,24 @@
 //variables
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+}
 
 * {
   margin: 0;
@@ -13,7 +33,19 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; //1rem = 10rem because 10/16 = 62.5%
+  font-size: 62.5%; //1rem = 10px because 10/16 = 62.5%
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px
+  }
+
+  @include respond(phone) {
+    font-size: 45%;
+  }
+  @media only screen and (max-width: 450px) {
+    // max-width: 35rem;
+    font-size: 40%;
+  }
 }
 
 body {
@@ -25,6 +57,10 @@ body {
   color: #777;
   // background-image: linear-gradient(to right bottom, #ebfafb, #d8f4f8);
   position: relative;
+
+  // @include respond(phone) {
+  //   background-color: red;
+  // }
 }
 
 //UTILITIES
