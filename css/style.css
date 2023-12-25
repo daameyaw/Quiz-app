@@ -132,7 +132,8 @@ body {
     position: absolute;
     top: -2px;
     right: 2rem;
-    color: black; }
+    color: black;
+    cursor: pointer; }
   .popup h3 {
     font-size: 3rem;
     text-transform: uppercase;

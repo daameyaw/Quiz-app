@@ -2,6 +2,7 @@ import View from "./view.js";
 
 const start = document.querySelector(".start");
 const overlay = document.querySelector(".overlay");
+const closeBtn = document.querySelector(".popup__close-btn");
 
 class startView extends View {
   _parentElement = document.querySelector(".select");
@@ -26,7 +27,15 @@ class startView extends View {
       handler();
     });
   }
+  handleClosePopup(handler) {
+    closeBtn.addEventListener("click", function (e) {
+      // const btn = e.target.closest(".popup__close-btn");
+      // if (!btn) return;
+      console.log(this);
+      handler();
+    });
+  }
 
-  handleStartClose() {}
+  // handleStartClose() {}
 }
 export default new startView();
