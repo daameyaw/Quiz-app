@@ -1,5 +1,7 @@
 import startView from "./views/startView.js";
 import * as model from "./model.js";
+import questionsView from "./views/questionsView.js";
+import View from "./views/view.js";
 
 const controlPopup = function () {
   console.log("hello");
@@ -14,6 +16,10 @@ const controlSubmit = async function () {
     const number = startView.getNumber();
 
     await model.loadQuestions(number, level);
+
+    questionsView.print();
+    // questionsView.render(model.state.questions);
+    // questionsView.closePopup();
   } catch (error) {
     console.log(error);
   }
