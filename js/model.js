@@ -62,18 +62,18 @@ export const loadQuestions = async function (number, level) {
 
   const daTa = await respond.json();
 
-  //   const [data] = daTa;
-  //   console.log(daTa);
-  //   if (data && data.questions && Array.isArray(data.questions)) {
-  //     // Assuming the API response has a property 'questions' that is an array
-  //     const transformedQuestions = data.questions.map(transformQuestion);
+  const [data] = daTa;
+  console.log(daTa);
+  if (data && data.questions && Array.isArray(data.questions)) {
+    // Assuming the API response has a property 'questions' that is an array
+    const transformedQuestions = data.questions.map(transformQuestion);
 
-  //     // Now state.questions is an array of transformed questions
-  //     state.questions = transformedQuestions;
+    // Now state.questions is an array of transformed questions
+    state.questions = transformedQuestions;
 
-  //     console.log(state.questions);
-  //   } else {
-  //     // Handle the case where the API response doesn't have the expected structure
-  //     console.error("Invalid API response structure:", data);
-  //   }
+    console.log(state.questions);
+  } else {
+    // Handle the case where the API response doesn't have the expected structure
+    console.error("Invalid API response structure:", data);
+  }
 };
