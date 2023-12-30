@@ -40,6 +40,17 @@ const category = "Linux";
 // const difficulty = "easy";
 
 function transformQuestion(data) {
+  //   let correctOption;
+
+  //   // Find the correct answer option
+  //   ["A", "B", "C", "D", "E"].forEach((option) => {
+  //     const isCorrectKey = `answer_${option.toLowerCase()}_correct`;
+  //     if (data.correct_answers[isCorrectKey]) {
+  //       correctOption = option.toLowerCase();
+  //     }
+  //   });
+  //   console.log(correctOption);
+
   return {
     question: data.question,
     optionA: data.answers.answer_a,
@@ -51,6 +62,12 @@ function transformQuestion(data) {
     correctAnswer: data.correct_answer,
     level: data.difficulty,
     explanation: data.explanation,
+    isCorrectA: data.correct_answers.answer_a_correct,
+    isCorrectB: data.correct_answers.answer_b_correct,
+    isCorrectC: data.correct_answers.answer_c_correct,
+    isCorrectD: data.correct_answers.answer_d_correct,
+    isCorrectE: data.correct_answers.answer_e_correct,
+
     // Add other properties as needed
   };
 }
@@ -60,20 +77,24 @@ export const loadQuestions = async function (number, level) {
     `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${number}&category=${category}&difficulty=${level}`
   );
 
-  const daTa = await respond.json();
+  const data = await respond.json();
 
-  const [data] = daTa;
-  console.log(daTa);
-  if (data && data.questions && Array.isArray(data.questions)) {
-    // Assuming the API response has a property 'questions' that is an array
-    const transformedQuestions = data.questions.map(transformQuestion);
+  console.log(data);
 
-    // Now state.questions is an array of transformed questions
-    state.questions = transformedQuestions;
+  const transformedQuestions = data.map(transformQuestion);
 
-    console.log(state.questions);
-  } else {
-    // Handle the case where the API response doesn't have the expected structure
-    console.error("Invalid API response structure:", data);
-  }
+  console.log(transformedQuestions);
+
+  //   if (data && data.questions && Array.isArray(data.questions)) {
+  //     // Assuming the API response has a property 'questions' that is an array
+  //     const transformedQuestions = data.questions.map(transformQuestion);
+
+  //     // Now state.questions is an array of transformed questions
+  //     state.questions = transformedQuestions;
+
+  //     console.log(state.questions);
+  //   } else {
+  //     // Handle the case where the API response doesn't have the expected structure
+  //     console.error("Invalid API response structure:", data);
+  //   }
 };
