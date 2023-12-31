@@ -40,16 +40,16 @@ const category = "Linux";
 // const difficulty = "easy";
 
 function transformQuestion(data) {
-  //   let correctOption;
+  let correctOption;
 
-  //   // Find the correct answer option
-  //   ["A", "B", "C", "D", "E"].forEach((option) => {
-  //     const isCorrectKey = `answer_${option.toLowerCase()}_correct`;
-  //     if (data.correct_answers[isCorrectKey]) {
-  //       correctOption = option.toLowerCase();
-  //     }
-  //   });
-  //   console.log(correctOption);
+  // Find the correct answer option
+  ["A", "B", "C", "D", "E"].forEach((option) => {
+    const isCorrectKey = `answer_${option.toLowerCase()}_correct`;
+    if (data.correct_answers[isCorrectKey]) {
+      correctOption = option.toLowerCase();
+    }
+  });
+  console.log(correctOption);
 
   return {
     question: data.question,
@@ -84,17 +84,4 @@ export const loadQuestions = async function (number, level) {
   const transformedQuestions = data.map(transformQuestion);
 
   console.log(transformedQuestions);
-
-  //   if (data && data.questions && Array.isArray(data.questions)) {
-  //     // Assuming the API response has a property 'questions' that is an array
-  //     const transformedQuestions = data.questions.map(transformQuestion);
-
-  //     // Now state.questions is an array of transformed questions
-  //     state.questions = transformedQuestions;
-
-  //     console.log(state.questions);
-  //   } else {
-  //     // Handle the case where the API response doesn't have the expected structure
-  //     console.error("Invalid API response structure:", data);
-  //   }
 };
