@@ -13,6 +13,7 @@ class questionsView extends View {
 
   print() {
     console.log(this._parentElement);
+    console.log(hello);
   }
 
   _generateMarkup() {
