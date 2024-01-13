@@ -40,16 +40,16 @@ const category = "Linux";
 // const difficulty = "easy";
 
 function transformQuestion(data) {
-  // let correctOption;
+  let correctOption;
 
-  // // Find the correct answer option
-  // ["A", "B", "C", "D", "E"].forEach((option) => {
-  //   const isCorrectKey = `answer_${option.toLowerCase()}_correct`;
-  //   if (data.correct_answers[isCorrectKey]) {
-  //     correctOption = option.toLowerCase();
-  //   }
-  // });
-  // console.log(correctOption);
+  // Find the correct answer option
+  ["A", "B", "C", "D", "E"].forEach((option) => {
+    const isCorrectKey = `answer_${option.toLowerCase()}_correct`;
+    if (data.correct_answers[isCorrectKey]) {
+      correctOption = option.toLowerCase();
+    }
+  });
+  console.log(correctOption);
 
   return {
     question: data.question,

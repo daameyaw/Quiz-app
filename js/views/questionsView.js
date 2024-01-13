@@ -6,10 +6,10 @@ const overlay = document.querySelector(".overlay");
 class questionsView extends View {
   _parentElement = document.querySelector(".question");
 
-  closePopup() {
-    start.classList.add("hidden");
-    overlay.classList.add("hidden");
-  }
+  // closePopup() {
+  //   start.classList.add("hidden");
+  //   overlay.classList.add("hidden");
+  // }
 
   print() {
     console.log(this._parentElement);
