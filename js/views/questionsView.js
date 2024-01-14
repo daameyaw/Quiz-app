@@ -29,9 +29,9 @@ class questionsView extends View {
       <button class="question__options">
         <p>${this._data.optionD}</p>
       </button>
-      <button class="question__options">
-        <p>${this._data.optionE}</p>
-      </button>
+      // <button class="question__options">
+      //   <p>${this._data.optionE}</p>
+      // </button>
 
       <button class="question__options">
         <p>${this._data.option}</p>
