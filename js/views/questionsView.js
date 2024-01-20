@@ -1,7 +1,7 @@
 import View from "./view.js";
 
-const start = document.querySelector(".start");
-const overlay = document.querySelector(".overlay");
+// const start = document.querySelector(".start");
+// const overlay = document.querySelector(".overlay");
 
 class questionsView extends View {
   _parentElement = document.querySelector(".question");
@@ -11,10 +11,10 @@ class questionsView extends View {
   //   overlay.classList.add("hidden");
   // }
 
-  print() {
-    console.log(this._parentElement);
-    // console.log(hello);
-  }
+  // print() {
+  //   console.log(this._parentElement);
+  //   // console.log(hello);
+  // }
 
   _generateMarkup() {
     return `<div class="quiz__number">Question 1/10</div>
