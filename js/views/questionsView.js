@@ -6,15 +6,15 @@ const overlay = document.querySelector(".overlay");
 class questionsView extends View {
   _parentElement = document.querySelector(".question");
 
-  closePopup() {
-    start.classList.add("hidden");
-    overlay.classList.add("hidden");
-  }
+  // closePopup() {
+  //   start.classList.add("hidden");
+  //   overlay.classList.add("hidden");
+  // }
 
-  print() {
-    console.log(this._parentElement);
-    // console.log(hello);
-  }
+  // print() {
+  //   console.log(this._parentElement);
+  //   // console.log(hello);
+  // }
 
   _generateMarkup() {
     return `<div class="quiz__number">Question 1/10</div>
