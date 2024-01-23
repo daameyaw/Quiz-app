@@ -465,6 +465,12 @@ body {
     .question__options:active {
       transform: translateX(2rem) translateY(0);
       box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.1); }
+  .question .error {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    font-size: 2rem;
+    display: flex; }
   .question__btns {
     display: flex;
     align-items: center;

@@ -44,6 +44,22 @@
     }
   }
 
+  .error {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    font-size: 2rem;
+
+    display: flex;
+
+    //  {
+    //   height: 3rem;
+    //   width: 3rem;
+    //   fill: $color-primary;
+    //   transform: translateY(-0.3rem);
+    // }
+  }
+
   &__btns {
     display: flex;
     align-items: center;

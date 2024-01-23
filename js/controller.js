@@ -22,6 +22,7 @@ const controlSubmit = async function () {
     // questionsView.closePopup();
   } catch (error) {
     console.log(error);
+    questionsView.renderError();
   }
 };
 

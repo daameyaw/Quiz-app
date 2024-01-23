@@ -32,15 +32,17 @@ function transformQuestion(data) {
 }
 
 export const loadQuestions = async function (number, level) {
-  const respond = await getJSON(
-    `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${number}&category=${category}&difficulty=${level}`
-  );
+  try {
+    const data = await getJSON(
+      `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${number}&category=${category}&difficulty=${level}`
+    );
 
-  const data = await respond.json();
+    console.log(data);
 
-  console.log(data);
+    const transformedQuestions = data.map(transformQuestion);
 
-  const transformedQuestions = data.map(transformQuestion);
-
-  console.log(transformedQuestions);
+    console.log(transformedQuestions);
+  } catch (error) {
+    throw error;
+  }
 };
