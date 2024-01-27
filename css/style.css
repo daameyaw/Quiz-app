@@ -498,6 +498,24 @@ body {
     border-radius: 100px;
     box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.05); }
 
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto; }
+
+.spinner__icon {
+  height: 4rem;
+  width: 4rem;
+  fill: #000;
+  animation: rotate 0.5s infinite linear; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 /*
 0 - 600px  Phone
 600px -900px  tablet portrait
