@@ -1,13 +1,14 @@
 import { getJSON } from "./helpers.js";
 
 export const state = {
-  questions: {},
+  questions: [],
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
 // const limit = 30;
 const category = "Linux";
 // const difficulty = "easy";
+let transformedQuestions;
 
 function transformQuestion(data) {
   return {
@@ -39,7 +40,9 @@ export const loadQuestions = async function (number, level) {
 
     console.log(data);
 
-    const transformedQuestions = data.map(transformQuestion);
+    transformedQuestions = data.map(transformQuestion);
+
+    state.questions = [...transformedQuestions];
 
     console.log(transformedQuestions);
   } catch (error) {

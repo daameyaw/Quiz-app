@@ -17,6 +17,14 @@ class questionsView extends View {
     // console.log(hello);
   }
 
+  renderSpinner() {
+    const markup = ` <div class="spinner">
+        <ion-icon class="spinner__icon" name="reload-outline"></ion-icon>
+      </div>`;
+    this._clear();
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+  }
+
   renderError(message = this.#message) {
     const markup = `<div class="error">
           <div>
@@ -29,24 +37,34 @@ class questionsView extends View {
   }
 
   _generateMarkup() {
+    return `
+    ${this._data.map(
+      (question = function () {
+        this._generateMarkupForQuestion(question);
+      })
+    )};
+    `;
+  }
+
+  _generateMarkupForQuestion(question) {
     return `<div class="quiz__number">Question 1/10</div>
-      <p class="question__text">${this._data.question}</p>
+      <p class="question__text">${question._data.question}</p>
       <button class="question__options html">
-        <p>${this._data.optionA}</p>
+        <p>${question._data.optionA}</p>
       </button>
-      <button class="question__options"><p>${this._data.optionB}</p></button>
+      <button class="question__options"><p>${question._data.optionB}</p></button>
       <button class="question__options">
-        <p>${this._data.optionC}</p>
-      </button>
-      <button class="question__options">
-        <p>${this._data.optionD}</p>
+        <p>${question._data.optionC}</p>
       </button>
       <button class="question__options">
-        <p>${this._data.optionE}</p>
+        <p>${question._data.optionD}</p>
+      </button>
+      <button class="question__options">
+        <p>${question._data.optionE}</p>
       </button>
 
       <button class="question__options">
-        <p>${this._data.option}</p>
+        <p>${question._data.option}</p>
       </button>
       <div class="question__btns">
         <div class="question__timer">4:00</div>

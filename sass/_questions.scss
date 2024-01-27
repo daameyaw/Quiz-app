@@ -99,3 +99,27 @@
     // margin-right: 23rem;
   }
 }
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.spinner__icon {
+  height: 4rem;
+  width: 4rem;
+  fill: #000;
+  animation: rotate 0.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

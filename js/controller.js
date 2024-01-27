@@ -15,10 +15,13 @@ const controlSubmit = async function () {
     const level = startView.getLevel();
     const number = startView.getNumber();
 
+    questionsView.closePopup();
+    questionsView.renderSpinner();
+
     await model.loadQuestions(number, level);
 
     questionsView.print();
-    // questionsView.render(model.state.questions);
+    questionsView.render(model.state.questions);
     // questionsView.closePopup();
   } catch (error) {
     console.log(error);
