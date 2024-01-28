@@ -1,7 +1,7 @@
 import { getJSON } from "./helpers.js";
 
 export const state = {
-  questions: [],
+  questions: "",
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
@@ -40,11 +40,9 @@ export const loadQuestions = async function (number, level) {
 
     console.log(data);
 
-    transformedQuestions = data.map(transformQuestion);
+    state.questions = data.map(transformQuestion);
 
-    state.questions = [...transformedQuestions];
-
-    console.log(transformedQuestions);
+    console.log(state.questions);
   } catch (error) {
     throw error;
   }
