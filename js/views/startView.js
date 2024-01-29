@@ -4,9 +4,19 @@ const start = document.querySelector(".start");
 const overlay = document.querySelector(".overlay");
 const closeBtn = document.querySelector(".popup__close-btn");
 const popupSubmit = document.querySelector(".popup__submit");
+const quizStart = document.querySelector(".start-quiz");
 
 class startView extends View {
   _parentElement = document.querySelector(".select");
+
+  controlStartDisplay() {
+    console.log("dav");
+    quizStart.classList.remove("hidden");
+  }
+
+  clearStart() {
+    quizStart.innerHTML = "";
+  }
 
   //OPENING AND CLOSING OF THE START POPUP
   handleStartPopup(handler) {
@@ -40,9 +50,11 @@ class startView extends View {
     popupSubmit.addEventListener("click", function (e) {
       e.preventDefault();
       console.log(this);
+      console.log(quizStart);
       handler();
     });
   }
+
   getLevel() {
     const selectLevel = document.querySelector(".selectLevel").value;
     const level = selectLevel;
