@@ -1,4 +1,5 @@
 import View from "./view.js";
+import startView from "./startView.js";
 
 const start = document.querySelector(".start");
 const overlay = document.querySelector(".overlay");
@@ -49,21 +50,38 @@ class questionsView extends View {
   _generateMarkup(questions) {
     const htmlArray = questions.map((question, i) => {
       return `
-        <div class="quiz__number">Question ${i + 1}/10</div>
+        <div class="quiz__number">Question ${
+          i + 1
+        }/${startView.getNumber()}</div>
         <p class="question__text">${question.question}</p>
         <button class="question__options html">
           <p>${question.optionA}</p>
         </button>
         <button class="question__options"><p>${question.optionB}</p></button>
-        <button class="question__options">
-          <p>${question.optionC}</p>
-        </button>
-        <button class="question__options">
-          <p>${question.optionD}</p>
-        </button>
-        <button class="question__options">
-          <p>${question.optionE}</p>
-        </button>
+        ${
+          question.optionC
+            ? `
+            <button class="question__options">
+              <p>${question.optionC}</p>
+            </button>`
+            : ""
+        }
+        ${
+          question.optionD
+            ? `
+            <button class="question__options">
+              <p>${question.optionD}</p>
+            </button>`
+            : ""
+        }
+        ${
+          question.optionE
+            ? `
+            <button class="question__options">
+              <p>${question.optionE}</p>
+            </button>`
+            : ""
+        }
   
         <div class="question__btns">
           <div class="question__timer">4:00</div>
