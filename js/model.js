@@ -6,7 +6,7 @@ export const state = {
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
 // const limit = 30;
-const category = "Linux";
+const category = "Laravel";
 // const difficulty = "easy";
 let transformedQuestions;
 
