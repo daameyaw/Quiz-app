@@ -6,7 +6,7 @@ export const state = {
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
 // const limit = 30;
-const category = "Laravel";
+const category = "Linux";
 // const difficulty = "easy";
 let transformedQuestions;
 
@@ -46,4 +46,12 @@ export const loadQuestions = async function (number, level) {
   } catch (error) {
     throw error;
   }
+};
+
+export const getQuestionsByPage = function (page) {
+  const start = (page - 1) * 1;
+  const end = page * 1;
+  console.log(start, end);
+
+  return state.questions.slice(start, end);
 };
