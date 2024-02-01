@@ -23,7 +23,8 @@ const controlSubmit = async function () {
     await model.loadQuestions(number, level);
 
     questionsView._clear();
-    questionsView.render(model.state.questions);
+    // questionsView.render(model.state.questions);
+    questionsView.render(model.getQuestionsByPage(3));
     questionsView.closePopup();
   } catch (error) {
     console.log(error);
