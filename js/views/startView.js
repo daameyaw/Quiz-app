@@ -5,13 +5,19 @@ const overlay = document.querySelector(".overlay");
 const closeBtn = document.querySelector(".popup__close-btn");
 const popupSubmit = document.querySelector(".popup__submit");
 const quizStart = document.querySelector(".start-quiz");
+const decision = document.querySelector(".decision");
+const quizSubmit = document.querySelector(".quiz__submit");
+const submitPopup = document.querySelector(".submit-popup");
 
 class startView extends View {
   _parentElement = document.querySelector(".select");
 
   controlStartDisplay() {
-    console.log("dav");
     quizStart.classList.remove("hidden");
+  }
+
+  controlDecisionDisplay() {
+    decision.classList.remove("hidden");
   }
 
   clearStart() {
@@ -51,6 +57,14 @@ class startView extends View {
       e.preventDefault();
       console.log(this);
       console.log(quizStart);
+      handler();
+    });
+  }
+  handleSubmitBtn(handler) {
+    quizSubmit.addEventListener("click", function (e) {
+      submitPopup.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+      console.log(submitPopup);
       handler();
     });
   }

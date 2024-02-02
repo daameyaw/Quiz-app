@@ -1,5 +1,6 @@
 import View from "./view.js";
 import startView from "./startView.js";
+import * as model from "../model.js";
 
 const start = document.querySelector(".start");
 const overlay = document.querySelector(".overlay");
@@ -50,9 +51,9 @@ class questionsView extends View {
   _generateMarkup(questions) {
     const htmlArray = questions.map((question, i) => {
       return `
-        <div class="quiz__number">Question ${
-          i + 1
-        }/${startView.getNumber()}</div>
+        <div class="quiz__number">Question ${model.state.page}/${
+        model.state.questions.length
+      }</div>
         <p class="question__text">${question.question}</p>
         <button class="question__options html">
           <p>${question.optionA}</p>
@@ -83,15 +84,6 @@ class questionsView extends View {
             : ""
         }
   
-        <div class="question__btns">
-          <div class="question__timer">4:00</div>
-          <div class="question__prevnext">
-            <button class="question__prevnext--prev ">previous</button>
-            <button class="question__prevnext--next ">next</button>
-          </div>
-        </div>
-        <div class="quiz__finish">finish</div>
-        <button class="quiz__submit">submit</button>
       `;
     });
 
