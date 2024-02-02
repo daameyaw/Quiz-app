@@ -8,6 +8,16 @@ export default class View {
     this._clear();
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
+
+  renderPagination(data) {
+    this._data = data;
+    const markup = this._generateMarkupP();
+
+    if (!data) return markup;
+    this._clear();
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+  }
+
   _clear() {
     this._parentElement.innerHTML = "";
   }
