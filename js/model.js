@@ -2,6 +2,8 @@ import { getJSON } from "./helpers.js";
 
 export const state = {
   questions: "",
+  page: 1,
+  resultsPerPage: 1,
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
@@ -48,10 +50,10 @@ export const loadQuestions = async function (number, level) {
   }
 };
 
-export const getQuestionsByPage = function (page) {
+export const getQuestionsByPage = function (page = state.page) {
+  state.page = page;
   const start = (page - 1) * 1;
   const end = page * 1;
-  console.log(start, end);
 
   return state.questions.slice(start, end);
 };
