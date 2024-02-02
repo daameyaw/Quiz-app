@@ -432,7 +432,7 @@ body {
 
 .question {
   padding: 2rem 4rem;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1rem; }
   .question__text {
     padding: 2rem 0;
     font-size: 2.5rem;
@@ -474,7 +474,8 @@ body {
   .question__btns {
     display: flex;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    padding: 2rem 4rem; }
   .question__prevnext--prev {
     margin-right: 1rem; }
   .question__prevnext--prev, .question__prevnext--next {
