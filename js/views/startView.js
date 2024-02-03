@@ -35,6 +35,18 @@ class startView extends View {
       handler();
     });
   }
+
+  getCategory() {
+    let selectedCategory;
+    this._parentElement.addEventListener("click", function (e) {
+      const cat = e.target.closest(".select__item");
+      if (!cat) return;
+      const category = cat.dataset.category;
+      selectedCategory = category;
+    });
+    console.log(selectedCategory);
+    // return selectedCategory;
+  }
   handleClosePopupBtn(handler) {
     closeBtn.addEventListener("click", function (e) {
       console.log(this);
