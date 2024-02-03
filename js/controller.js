@@ -15,6 +15,7 @@ const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
     const number = startView.getNumber();
+    // const category = startView.getCategory();
 
     startView.clearStart();
     questionsView.closePopup();
@@ -44,9 +45,10 @@ const controlPagination = function (goToPage) {
   paginationView.renderPagination(model.state);
 };
 
-const controlSubmitPopup = function () {};
+const controlGetCategory = function () {};
 
 const init = function () {
+  startView.getCategory();
   startView.controlStartDisplay();
   startView.handleStartPopup(controlPopup);
   startView.handleClosePopupBtn(controlClosePopup);
