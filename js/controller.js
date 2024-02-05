@@ -4,25 +4,23 @@ import questionsView from "./views/questionsView.js";
 import paginationView from "./views/paginationView.js";
 import View from "./views/view.js";
 
-const controlPopup = function () {
-  console.log("hello");
-};
+let category;
+const controlPopup = function () {};
 
-const controlClosePopup = function () {
-  console.log("david");
-};
+const controlClosePopup = function () {};
 const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
     const number = startView.getNumber();
-    // const category = startView.getCategory();
+    const topic = startView.getTopic();
+    console.log(topic);
 
     startView.clearStart();
     questionsView.closePopup();
     questionsView._clear();
     questionsView.renderSpinner();
 
-    await model.loadQuestions(number, level);
+    await model.loadQuestions(number, level, topic);
 
     questionsView._clear();
     // questionsView.render(model.state.questions);
@@ -45,10 +43,7 @@ const controlPagination = function (goToPage) {
   paginationView.renderPagination(model.state);
 };
 
-const controlGetCategory = function () {};
-
 const init = function () {
-  startView.getCategory();
   startView.controlStartDisplay();
   startView.handleStartPopup(controlPopup);
   startView.handleClosePopupBtn(controlClosePopup);
