@@ -34,10 +34,10 @@ function transformQuestion(data) {
   };
 }
 
-export const loadQuestions = async function (number, level) {
+export const loadQuestions = async function (number, level, topic) {
   try {
     const data = await getJSON(
-      `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${number}&category=${category}&difficulty=${level}`
+      `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${number}&category=${topic}&difficulty=${level}`
     );
 
     console.log(data);
