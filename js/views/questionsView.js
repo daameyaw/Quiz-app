@@ -55,10 +55,10 @@ class questionsView extends View {
         model.state.questions.length
       }</div>
         <p class="question__text">${question.question}</p>
-        <button class="question__options html">
+        <button class="question__options html" data-option="A">
           <p>${question.optionA}</p>
         </button>
-        <button class="question__options"><p>${question.optionB}</p></button>
+        <button class="question__options" ><p>${question.optionB}</p></button>
         ${
           question.optionC
             ? `
