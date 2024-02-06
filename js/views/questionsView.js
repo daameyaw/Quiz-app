@@ -72,7 +72,7 @@ class questionsView extends View {
         ${
           question.optionD
             ? `
-            <button class="question__options">
+            <button class="question__options" data-option="D">
               <p>${question.optionD}</p>
             </button>`
             : ""
@@ -80,7 +80,7 @@ class questionsView extends View {
         ${
           question.optionE
             ? `
-            <button class="question__options">
+            <button class="question__options" data-option="E">
               <p>${question.optionE}</p>
             </button>`
             : ""
