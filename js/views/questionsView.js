@@ -58,7 +58,9 @@ class questionsView extends View {
         <button class="question__options html" data-option="A">
           <p>${question.optionA}</p>
         </button>
-        <button class="question__options" ><p>${question.optionB}</p></button>
+        <button class="question__options" data-option="B"><p>${
+          question.optionB
+        }</p></button>
         ${
           question.optionC
             ? `
