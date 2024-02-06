@@ -11,6 +11,7 @@ const submitPopup = document.querySelector(".submit-popup");
 
 class startView extends View {
   _parentElement = document.querySelector(".select");
+  _selectedCategory = "";
 
   controlStartDisplay() {
     quizStart.classList.remove("hidden");
@@ -29,24 +30,12 @@ class startView extends View {
     this._parentElement.addEventListener("click", function (e) {
       const btn = e.target.closest(".select__item");
       if (!btn) return;
-      console.log(start);
       start.classList.remove("hidden");
       overlay.classList.remove("hidden");
       handler();
     });
   }
 
-  getCategory() {
-    let selectedCategory;
-    this._parentElement.addEventListener("click", function (e) {
-      const cat = e.target.closest(".select__item");
-      if (!cat) return;
-      const category = cat.dataset.category;
-      selectedCategory = category;
-    });
-    console.log(selectedCategory);
-    // return selectedCategory;
-  }
   handleClosePopupBtn(handler) {
     closeBtn.addEventListener("click", function (e) {
       console.log(this);
@@ -86,6 +75,12 @@ class startView extends View {
     const level = selectLevel;
     return level;
   }
+  getTopic() {
+    const selectTopic = document.querySelector(".selectTopic").value;
+    const topic = selectTopic;
+    return topic;
+  }
+
   getNumber() {
     const selectNumber = document.querySelector(".selectNumber").value;
     const number = +selectNumber;
