@@ -22,12 +22,6 @@ export default class View {
     this._parentElement.innerHTML = "";
   }
 
-  //   update(data) {
-  //     // if (!data || (Array.isArray(data) && data.length === 0))
-  //     //   return this.renderError();
-  //     this._data = data;
-  //     const newMarkup = this._generateMarkup();
-
   //     const newDom = document.createRange().createContextualFragment(newMarkup);
   //     const newElements = Array.from(newDom.querySelectorAll('*'));
   //     const curElements = Array.from(this._parentElement.querySelectorAll('*'));
