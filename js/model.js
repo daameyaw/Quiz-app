@@ -1,10 +1,10 @@
 import { getJSON } from "./helpers.js";
 
-export const state = {
-  questions: "",
-  page: 1,
-  resultsPerPage: 1,
-};
+// export const state = {
+//   questions: "",
+//   page: 1,
+//   resultsPerPage: 1,
+// };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
 // const limit = 30;
