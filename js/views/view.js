@@ -21,10 +21,4 @@ export default class View {
   _clear() {
     this._parentElement.innerHTML = "";
   }
-
-  //   addHandlerRender(handler) {
-  //     ['hashchange', 'load'].forEach(function (event) {
-  //       window.addEventListener(event, handler);
-  //     });
-  //   }
 }

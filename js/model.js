@@ -4,6 +4,7 @@ export const state = {
   questions: "",
   page: 1,
   resultsPerPage: 1,
+  correctAnswer: "",
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
@@ -11,6 +12,7 @@ const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
 const category = "Linux";
 // const difficulty = "easy";
 let transformedQuestions;
+let correctAnswer;
 
 function transformQuestion(data) {
   return {
@@ -21,7 +23,6 @@ function transformQuestion(data) {
     optionD: data.answers.answer_d,
     optionE: data.answers.answer_e,
     category: data.category,
-    correctAnswer: data.correct_answer,
     level: data.difficulty,
     explanation: data.explanation,
     isCorrectA: data.correct_answers.answer_a_correct,
@@ -29,9 +30,22 @@ function transformQuestion(data) {
     isCorrectC: data.correct_answers.answer_c_correct,
     isCorrectD: data.correct_answers.answer_d_correct,
     isCorrectE: data.correct_answers.answer_e_correct,
+    correctAnswer: getCorrectAnswer(data.correct_answers),
+    correctAnswerChar: correctAnswer[7].toUpperCase(),
 
     // Add other properties as needed
   };
+}
+
+function getCorrectAnswer(correctAnswers) {
+  for (const key in correctAnswers) {
+    if (correctAnswers[key] === "true") {
+      correctAnswer = key;
+      break;
+    }
+  }
+  console.log(correctAnswer);
+  return correctAnswer;
 }
 
 export const loadQuestions = async function (number, level, topic) {
@@ -43,6 +57,10 @@ export const loadQuestions = async function (number, level, topic) {
     console.log(data);
 
     state.questions = data.map(transformQuestion);
+
+    // state.correctAnswer = data.map((question) =>
+    //   question.getCorrectAnswer(question.correct_answers)
+    // );
 
     console.log(state.questions);
   } catch (error) {
