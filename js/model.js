@@ -55,6 +55,7 @@ export const loadQuestions = async function (number, level, topic) {
     state.questions = data.map(transformQuestion);
 
     console.log(state.questions);
+    console.log(state);
   } catch (error) {
     throw error;
   }
