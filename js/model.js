@@ -8,10 +8,8 @@ export const state = {
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
-// const limit = 30;
 const category = "Linux";
-// const difficulty = "easy";
-let transformedQuestions;
+// let transformedQuestions;
 let correctAnswer;
 
 function transformQuestion(data) {
@@ -32,8 +30,6 @@ function transformQuestion(data) {
     isCorrectE: data.correct_answers.answer_e_correct,
     correctAnswer: getCorrectAnswer(data.correct_answers),
     correctAnswerChar: correctAnswer[7].toUpperCase(),
-
-    // Add other properties as needed
   };
 }
 
@@ -57,10 +53,6 @@ export const loadQuestions = async function (number, level, topic) {
     console.log(data);
 
     state.questions = data.map(transformQuestion);
-
-    // state.correctAnswer = data.map((question) =>
-    //   question.getCorrectAnswer(question.correct_answers)
-    // );
 
     console.log(state.questions);
   } catch (error) {
