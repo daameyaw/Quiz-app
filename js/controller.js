@@ -2,6 +2,8 @@ import startView from "./views/startView.js";
 import * as model from "./model.js";
 import questionsView from "./views/questionsView.js";
 import paginationView from "./views/paginationView.js";
+import optionsView from "./views/optionsView.js";
+import submitView from "./views/submitView.js";
 import View from "./views/view.js";
 
 let category;
@@ -25,6 +27,7 @@ const controlSubmit = async function () {
     questionsView._clear();
     // questionsView.render(model.state.questions);
     questionsView.render(model.getQuestionsByPage());
+    submitView.renderSubmit();
     startView.controlDecisionDisplay();
 
     questionsView.closePopup();
@@ -43,6 +46,28 @@ const controlPagination = function (goToPage) {
   paginationView.renderPagination(model.state);
 };
 
+const controlMarking = function (selectedOption) {
+  console.log(model.state.questions[model.state.page - 1]);
+  if (
+    selectedOption ===
+    model.state.questions[model.state.page - 1].correctAnswerChar
+  ) {
+    console.log("correct");
+    model.state.questions[model.state.page - 1] = {
+      ...model.state.questions[model.state.page - 1],
+      isCorrect: true,
+    };
+    console.log(model.state.questions);
+  } else {
+    console.log("wrong");
+    model.state.questions[model.state.page - 1] = {
+      ...model.state.questions[model.state.page - 1],
+      isCorrect: false,
+    };
+    console.log(model.state.questions);
+  }
+};
+
 const init = function () {
   startView.controlStartDisplay();
   startView.handleStartPopup(controlPopup);
@@ -50,6 +75,6 @@ const init = function () {
   startView.handleClosePopupOverlay();
   startView.handleStart(controlSubmit);
   paginationView.handlePagination(controlPagination);
-  // startView.handleSubmitBtn(controlSubmitPopup);
+  optionsView.handleMarking(controlMarking);
 };
 init();
