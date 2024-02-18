@@ -14,12 +14,10 @@ class startView extends View {
   _selectedCategory = "";
 
   controlStartDisplay() {
-    quizStart.classList.remove("hidden");
+    console.log("");
   }
 
-  controlDecisionDisplay() {
-    decision.classList.remove("hidden");
-  }
+  controlDecisionDisplay() {}
 
   clearStart() {
     quizStart.innerHTML = "";
@@ -48,7 +46,6 @@ class startView extends View {
 
   handleClosePopupOverlay() {
     overlay.addEventListener("click", function (e) {
-      console.log(this);
       start.classList.add("hidden");
       overlay.classList.add("hidden");
     });
@@ -56,8 +53,6 @@ class startView extends View {
   handleStart(handler) {
     popupSubmit.addEventListener("click", function (e) {
       e.preventDefault();
-      console.log(this);
-      console.log(quizStart);
       handler();
     });
   }
@@ -65,7 +60,6 @@ class startView extends View {
     quizSubmit.addEventListener("click", function (e) {
       submitPopup.classList.remove("hidden");
       overlay.classList.remove("hidden");
-      console.log(submitPopup);
       handler();
     });
   }
