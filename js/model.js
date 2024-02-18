@@ -40,7 +40,6 @@ function getCorrectAnswer(correctAnswers) {
       break;
     }
   }
-  console.log(correctAnswer);
   return correctAnswer;
 }
 
@@ -50,12 +49,7 @@ export const loadQuestions = async function (number, level, topic) {
       `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${number}&category=${topic}&difficulty=${level}`
     );
 
-    console.log(data);
-
     state.questions = data.map(transformQuestion);
-
-    console.log(state.questions);
-    console.log(state);
   } catch (error) {
     throw error;
   }
