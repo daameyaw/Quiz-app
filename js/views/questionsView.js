@@ -14,10 +14,7 @@ class questionsView extends View {
     overlay.classList.add("hidden");
   }
 
-  print() {
-    console.log(this._parentElement);
-    // console.log(hello);
-  }
+  print() {}
 
   renderSpinner() {
     const markup = ` <div class="spinner">
@@ -55,6 +52,7 @@ class questionsView extends View {
         model.state.questions.length
       }</div>
         <p class="question__text">${question.question}</p>
+        <div class="options">
         <button class="question__options html" data-option="A">
           <p>${question.optionA}</p>
         </button>
@@ -82,10 +80,10 @@ class questionsView extends View {
             ? `
             <button class="question__options" data-option="E">
               <p>${question.optionE}</p>
-            </button>`
+            </button> `
             : ""
         }
-  
+        </div>
       `;
     });
 
