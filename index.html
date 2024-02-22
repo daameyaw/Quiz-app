@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+
     <!-- <link rel="stylesheet" href="" /> -->
     <script type="module" src="./js/controller.js"></script>
     <script type="module" src="./js/index.js"></script>
@@ -20,209 +21,173 @@
     <script type="module" src="./js/views/view.js"></script>
     <script type="module" src="./js/views/optionsView.js"></script>
     <script type="module" src="./js/views/submitView.js"></script>
+    <script type="module" src="./js/views/resultsView.js"></script>
 
     <title>Quizly</title>
   </head>
   <body>
-    <div class="header">
-      <div class="header__message">
-        <h3>Welcome back,David</h3>
-      </div>
-      <!-- <div class="header__logo">
+    <div class="container">
+      <div class="header">
+        <div class="header__message">
+          <h3>Welcome back,David</h3>
+        </div>
+        <!-- <div class="header__logo">
         <img src="img/20824345_6322519.jpg" alt="" />
       </div> -->
-      <div class="header__user-box">
-        <div class="">
-          <img
-            src="img/photo_2023-11-28_15-08-26.jpg"
-            alt="user photo"
-            class="header__user-photo"
-          />
+        <div class="header__user-box">
+          <div class="">
+            <img
+              src="img/photo_2023-11-28_15-08-26.jpg"
+              alt="user photo"
+              class="header__user-photo"
+            />
+          </div>
+          <span>David</span>
         </div>
-        <span>David</span>
+      </div>
+      <div class="main">
+        <div class="select-menu">
+          <div class="start hidden">
+            <div class="popup">
+              <div class="popup__close-btn">&times</div>
+              <h3>
+                Ready to start your quiz?
+                <br />
+                Let's get your quiz ready :)
+              </h3>
+              <div class="popup__number">
+                <p class="popup__number-heading">
+                  What topic would you like to test yourself on?
+                </p>
+                <form class="popup__number-form">
+                  <select class="selectTopic" name="Number" id="">
+                    <option value="Linux">Linux</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="Docker">Docker</option>
+                    <option value="Bash">Bash</option>
+                  </select>
+                </form>
+
+                <p class="popup__number-heading">
+                  How many questions would you like to answer?
+                </p>
+                <form class="popup__number-form">
+                  <select class="selectNumber" name="Number" id="">
+                    <option value="1">1</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                  </select>
+                </form>
+                <h4 class="popup__number-heading">difficulty</h4>
+                <form class="popup__number-form">
+                  <select class="selectLevel" name="Number" id="">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="difficult">Difficult</option>
+                  </select>
+                </form>
+                <button class="popup__submit" type="submit">Start</button>
+              </div>
+            </div>
+          </div>
+          <div class="overlay hidden"></div>
+
+          <div class="submit overlay hidden">
+            <div class="submit-popup">
+              <div>
+                <div class="popup__close-btn">&times</div>
+                <h4 class="submit-popup__heading">Are you sure?</h4>
+                <p class="submit-popup__message">
+                  Please review your questions and make sure you've answered on
+                  all of them! There is no going back!
+                </p>
+                <button class="submit-popup__btn submit-popup__btn--violet">
+                  Return to quiz
+                </button>
+                <button
+                  class="submit-popup__btn submit-popup__btn--green results-page"
+                >
+                  <a href="#">Submit</a>
+                </button>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <ul class="select">
+            <li class="select__item" data-category="Linux">
+              <a href="#" class="select__item-link linux">
+                <ion-icon class="select__item-icon" name="logo-tux"></ion-icon>
+                <span>Linux</span>
+              </a>
+            </li>
+            <li class="select__item DevOps" data-category="DevOps">
+              <a href="#" class="select__item-link devops">
+                <ion-icon
+                  class="select__item-icon"
+                  name="recording-outline"
+                ></ion-icon>
+                <span>DevOps </span>
+              </a>
+            </li>
+            <li class="select__item WordPress" data-category="Docker">
+              <a href="#" class="select__item-link wordpress">
+                <ion-icon
+                  class="select__item-icon"
+                  name="logo-docker"
+                ></ion-icon>
+                <span>Docker</span>
+              </a>
+            </li>
+            <li class="select__item Laravel" data-category="Bash">
+              <a href="#" class="select__item-link laravel">
+                <ion-icon
+                  class="select__item-icon"
+                  name="prism-outline"
+                ></ion-icon>
+                <span>Bash </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quiz">
+          <div class="error hidden">
+            <p class="quiz__start">
+              <span class="quiz__start--imoji">😐</span
+              ><span class="quiz__start-text"
+                >Sorry quiz couldn't load.Please try again!</span
+              >
+            </p>
+          </div>
+
+          <div class="quiz__start">
+            <div class="start-quiz">
+              <p class="quiz__start-text">
+                Select one of the options above
+                <span>
+                  <ion-icon
+                    class="select__item-icon quiz__start-icon quiz__start-icon--arrow"
+                    name="arrow-up-outline"
+                  ></ion-icon>
+                </span>
+                to get started
+              </p>
+              <ion-icon
+                class="select__item-icon quiz__start-icon quiz__start-icon--flash"
+                name="flash-outline"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div class="question"></div>
+          <div class="question__btns"></div>
+          <div class="decision"></div>
+        </div>
       </div>
     </div>
-    <div class="main">
-      <div class="select-menu">
-        <div class="start hidden">
-          <div class="popup">
-            <div class="popup__close-btn">&times</div>
-            <h3>
-              Ready to start your quiz?
-              <br />
-              Let's get your quiz ready :)
-            </h3>
-            <div class="popup__number">
-              <p class="popup__number-heading">
-                What topic would you like to test yourself on?
-              </p>
-              <form class="popup__number-form">
-                <select class="selectTopic" name="Number" id="">
-                  <option value="Linux">Linux</option>
-                  <option value="DevOps">DevOps</option>
-                  <option value="Docker">Docker</option>
-                  <option value="Bash">Bash</option>
-                </select>
-              </form>
-
-              <p class="popup__number-heading">
-                How many questions would you like to answer?
-              </p>
-              <form class="popup__number-form">
-                <select class="selectNumber" name="Number" id="">
-                  <option value="1">1</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                </select>
-              </form>
-              <h4 class="popup__number-heading">difficulty</h4>
-              <form class="popup__number-form">
-                <select class="selectLevel" name="Number" id="">
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-                  <option value="difficult">Difficult</option>
-                </select>
-              </form>
-              <button class="popup__submit" type="submit">Start</button>
-            </div>
-          </div>
-        </div>
-        <div class="overlay hidden"></div>
-
-        <div class="overlay hidden">
-          <div class="submit-popup">
-            <div>
-              <div class="popup__close-btn">&times</div>
-              <h4 class="submit-popup__heading">Are you sure?</h4>
-              <p class="submit-popup__message">
-                Please review your questions and make sure you've answered on
-                all of them! There is no going back!
-              </p>
-              <button class="submit-popup__btn submit-popup__btn--violet">
-                Return to quiz
-              </button>
-              <button class="submit-popup__btn submit-popup__btn--green">
-                <a href="results.html">Submit</a>
-              </button>
-            </div>
-            <div></div>
-          </div>
-        </div>
-        <ul class="select">
-          <li class="select__item" data-category="Linux">
-            <a href="#" class="select__item-link linux">
-              <ion-icon class="select__item-icon" name="logo-tux"></ion-icon>
-              <span>Linux</span>
-            </a>
-          </li>
-          <li class="select__item DevOps" data-category="DevOps">
-            <a href="#" class="select__item-link devops">
-              <ion-icon
-                class="select__item-icon"
-                name="recording-outline"
-              ></ion-icon>
-              <span>DevOps </span>
-            </a>
-          </li>
-          <li class="select__item WordPress" data-category="Docker">
-            <a href="#" class="select__item-link wordpress">
-              <ion-icon class="select__item-icon" name="logo-docker"></ion-icon>
-              <span>Docker</span>
-            </a>
-          </li>
-          <li class="select__item Laravel" data-category="Bash">
-            <a href="#" class="select__item-link laravel">
-              <ion-icon
-                class="select__item-icon"
-                name="prism-outline"
-              ></ion-icon>
-              <span>Bash </span>
-            </a>
-          </li>
-          <!-- <li class="select__item MySQL">
-            <a href="#" class="select__item-link sql">
-              <ion-icon class="select__item-icon" name="logo-alipay"></ion-icon>
-              <span>MySQL </span>
-            </a>
-          </li>
-          <li class="select__item Javascript">
-            <a href="#" class="select__item-link javascript">
-              <ion-icon
-                class="select__item-icon"
-                name="logo-javascript"
-              ></ion-icon>
-              <span>Javascript</span>
-            </a>
-          </li> -->
-        </ul>
-      </div>
-      <!-- <div class="spinner">
-        <ion-icon class="spinner__icon" name="reload-outline"></ion-icon>
-      </div> -->
-
-      <div class="quiz">
-        <div class="error hidden">
-          <p class="quiz__start">
-            <span class="quiz__start--imoji">😐</span
-            ><span class="quiz__start-text"
-              >Sorry quiz couldn't load.Please try again!</span
-            >
-          </p>
-        </div>
-
-        <div class="quiz__start">
-          <div class="start-quiz">
-            <p class="quiz__start-text">
-              Select one of the options above
-              <span>
-                <ion-icon
-                  class="select__item-icon quiz__start-icon quiz__start-icon--arrow"
-                  name="arrow-up-outline"
-                ></ion-icon>
-              </span>
-              to get started
-            </p>
-            <ion-icon
-              class="select__item-icon quiz__start-icon quiz__start-icon--flash"
-              name="flash-outline"
-            ></ion-icon>
-          </div>
-        </div>
-
-        <div class="question">
-          <!-- <div class="quiz__number">Question 1/15</div>
-          <p class="question__text">What is javascript?</p>
-          <button class="question__options html">
-            <p>Programming Language</p>
-          </button>
-          <button class="question__options"><p>Markup language</p></button>
-          <button class="question__options">
-            <p>Programming Language</p>
-          </button>
-          <button class="question__options">
-            <p>Programming Language</p>
-          </button>
-          <button class="question__options">
-            <p>Programming Language</p>
-          </button>
-
-          <button class="question__options">
-            <p>Programming Language</p>
-          </button> -->
-        </div>
-        <div class="question__btns">
-          <!-- <div class="question__timer">4:00</div>
-          <div class="question__prevnext">
-            <button class="btns question__prevnext--prev">previous</button>
-            <button class="btns question__prevnext--next">next</button>
-          </div> -->
-        </div>
-        <div class="decision">
-          <!-- <div class="quiz__finish">finish</div>
-          <button class="quiz__submit">submit</button> -->
-        </div>
-      </div>
+    <div class="resultsPage hidden">
+      <div class="results">Hello</div>
     </div>
     <script
       type="module"
