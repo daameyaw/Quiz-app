@@ -55,6 +55,7 @@
 .hidden {
   visibility: hidden;
   opacity: 0;
+  height: 0rem;
 }
 
 .start {
@@ -271,7 +272,7 @@
     }
   }
   &__text {
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-align: left;
     color: #444 !important;
     margin-bottom: 0.5rem;
