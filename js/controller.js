@@ -5,9 +5,12 @@ import paginationView from "./views/paginationView.js";
 import optionsView from "./views/optionsView.js";
 import submitView from "./views/submitView.js";
 import View from "./views/view.js";
+import resultView from "./views/resultsView.js";
 
 let category;
 const controlPopup = function () {};
+
+const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 const controlSubmit = async function () {
@@ -56,7 +59,9 @@ const controlMarking = function (selectedOption) {
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: true,
+      selectedOption,
     };
+    model.state.score++;
     console.log(model.state.questions);
   } else {
     console.log("wrong");
@@ -66,6 +71,12 @@ const controlMarking = function (selectedOption) {
     };
     console.log(model.state.questions);
   }
+  // resultView.render(model.state.questions);
+};
+const controlResultsPage = function () {
+  console.log("u working");
+  console.log(model.state.questions);
+  resultView.render(model.state.questions);
 };
 
 const init = function () {
@@ -76,5 +87,7 @@ const init = function () {
   startView.handleStart(controlSubmit);
   paginationView.handlePagination(controlPagination);
   optionsView.handleMarking(controlMarking);
+  submitView.handleSubmitBtn(controlSubmitBtn);
+  resultView.handleViewResults(controlResultsPage);
 };
 init();
