@@ -5,6 +5,7 @@ export const state = {
   page: 1,
   resultsPerPage: 1,
   correctAnswer: "",
+  score: 0,
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
@@ -30,6 +31,7 @@ function transformQuestion(data) {
     isCorrectE: data.correct_answers.answer_e_correct,
     correctAnswer: getCorrectAnswer(data.correct_answers),
     correctAnswerChar: correctAnswer[7].toUpperCase(),
+    isCorrect: false,
   };
 }
 
