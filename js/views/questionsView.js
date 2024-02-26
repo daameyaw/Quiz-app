@@ -53,6 +53,12 @@ class questionsView extends View {
       }</div>
         <p class="question__text">${question.question}</p>
         <div class="options">
+        <label class="question__options">
+        <input type="radio" name="options" class="question__options-radio" data-option="A">
+        <p class="answers" data-option="A">
+          <p>${question.optionA}</p>
+        </p>
+      </label>
         <button class="question__options html" data-option="A">
           <p>${question.optionA}</p>
         </button>
