@@ -32,10 +32,19 @@ class resultView extends View {
 
   _generateMarkup(questions) {
     const html = questions.map((question, i) => {
-      return `<div class="results__score">
-      <h3>total score</h3>
-      <p>${model.state.score}/${model.state.questions.length}</p>
-    </div>
+      return `
+      <div>
+      ${
+        i === 0
+          ? `
+          <div class="results__score">
+            <h3>total score</h3>
+            <p>
+              ${model.state.score}/${model.state.questions.length}
+            </p>
+          </div> `
+          : ""
+      }
 
     <div class="results__question">
       <p class="results__question-number">Question ${i + 1}</p>
@@ -193,6 +202,7 @@ class resultView extends View {
         }
       </div>
     </div> 
+    </div>
 `;
     });
 
