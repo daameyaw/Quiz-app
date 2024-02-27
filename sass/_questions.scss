@@ -1,3 +1,12 @@
+.answers {
+  border: none;
+  background-color: #777;
+  font-size: 1.7rem;
+  // padding: 1.5rem 3rem 1.5rem 0.3rem;
+
+  // background-image: linear-gradient(to right, #c0c3c6, #909294);
+}
+
 .question {
   padding: 2rem 4rem;
   margin-bottom: 1rem;
@@ -8,6 +17,7 @@
     font-weight: 500;
     color: #444;
   }
+
   &__options {
     font-size: 1.7rem;
     border: none;
