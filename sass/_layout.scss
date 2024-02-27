@@ -230,12 +230,27 @@
     }
   }
 }
+.question__options {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.question__options input {
+  margin-right: 10px; /* Adjust the margin as needed */
+  border: none;
+  background-color: #777;
+  font-size: 1.7rem;
+}
+.resultsPage {
+  padding: 3rem;
+}
 
 .results {
   // margin: 5rem 0 2rem 25rem;
   background-color: #fff;
   margin: 2rem auto;
-  max-width: 80rem;
+  // max-width: 80rem;
   // height: 33rem;
   // margin-top: 5rem;
   padding: 3rem;
@@ -326,7 +341,7 @@
   }
 }
 .question__explanation {
-  height: 14rem;
+  // height: 14rem;
   // width: 39rem;
   padding: 2rem;
   padding-left: 1rem;
