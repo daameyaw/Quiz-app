@@ -35,15 +35,15 @@ class questionsView extends View {
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  _generateMarkup() {
-    return `
-    ${this._data.map(
-      (question = function () {
-        this._generateMarkupForQuestion(question);
-      })
-    )};
-    `;
-  }
+  // _generateMarkup() {
+  //   return `
+  //   ${this._data.map(
+  //     (question = function () {
+  //       this._generateMarkupForQuestion(question);
+  //     })
+  //   )};
+  //   `;
+  // }
 
   _generateMarkup(questions) {
     const htmlArray = questions.map((question, i) => {
