@@ -14,7 +14,7 @@ class questionsView extends View {
     overlay.classList.add("hidden");
   }
 
-  print() {}
+  // print() {}
 
   renderSpinner() {
     const markup = ` <div class="spinner">
