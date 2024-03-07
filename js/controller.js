@@ -73,11 +73,11 @@ const controlMarking = function (selectedOption) {
   }
   // resultView.render(model.state.questions);
 };
-// const controlResultsPage = function () {
-//   console.log("u working");
-//   console.log(model.state.questions);
-//   resultView.render(model.state.questions);
-// };
+const controlResultsPage = function () {
+  console.log("u working");
+  console.log(model.state.questions);
+  resultView.render(model.state.questions);
+};
 
 const init = function () {
   startView.controlStartDisplay();
