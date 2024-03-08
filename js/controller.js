@@ -79,15 +79,15 @@ const controlResultsPage = function () {
   resultView.render(model.state.questions);
 };
 
-// const init = function () {
-//   startView.controlStartDisplay();
-//   startView.handleStartPopup(controlPopup);
-//   startView.handleClosePopupBtn(controlClosePopup);
-//   startView.handleClosePopupOverlay();
-//   startView.handleStart(controlSubmit);
-//   paginationView.handlePagination(controlPagination);
-//   optionsView.handleMarking(controlMarking);
-//   submitView.handleSubmitBtn(controlSubmitBtn);
-//   resultView.handleViewResults(controlResultsPage);
-// };
+const init = function () {
+  startView.controlStartDisplay();
+  startView.handleStartPopup(controlPopup);
+  startView.handleClosePopupBtn(controlClosePopup);
+  startView.handleClosePopupOverlay();
+  startView.handleStart(controlSubmit);
+  paginationView.handlePagination(controlPagination);
+  optionsView.handleMarking(controlMarking);
+  submitView.handleSubmitBtn(controlSubmitBtn);
+  resultView.handleViewResults(controlResultsPage);
+};
 init();
