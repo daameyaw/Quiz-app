@@ -10,7 +10,7 @@ import resultView from "./views/resultsView.js";
 let category;
 const controlPopup = function () {};
 
-const controlSubmitBtn = function () {};
+// const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 const controlSubmit = async function () {
