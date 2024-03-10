@@ -1,7 +1,7 @@
 import View from "./view.js";
 
 class optionsView extends View {
-  _parentElement = document.querySelector(".question");
+  // _parentElement = document.querySelector(".question");
 
   handleMarking(handler) {
     this._parentElement.addEventListener("click", function (e) {
