@@ -8,6 +8,7 @@ const quizStart = document.querySelector(".start-quiz");
 const decision = document.querySelector(".decision");
 const quizSubmit = document.querySelector(".quiz__submit");
 const submitPopup = document.querySelector(".submit-popup");
+const selectTopic = document.querySelector(".select");
 
 class startView extends View {
   _parentElement = document.querySelector(".select");
