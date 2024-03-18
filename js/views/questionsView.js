@@ -52,19 +52,24 @@ class questionsView extends View {
         model.state.questions.length
       }</div>
         <p class="question__text">${question.question}</p>
+
         <div class="options">
-        <label class="question__options">
-        <input type="checkbox" name="options" checked class="question__options-radio" data-option="A">
-        <p class="answers" data-option="A">
+         <label class="question__options">
+          <input type="checkbox" name="options" checked class="question__options-radio" data-option="A">
+
+          <p class="answers" data-option="A">
           <p>${question.optionA}</p>
-        </p>
-      </label>
+          </p>
+         </label>
+
         <button class="question__options html" data-option="A">
           <p>${question.optionA}</p>
         </button>
         <button class="question__options" data-option="B"><p>${
           question.optionB
         }</p></button>
+
+
         ${
           question.optionC
             ? `
@@ -73,6 +78,7 @@ class questionsView extends View {
             </button>`
             : ""
         }
+
         ${
           question.optionD
             ? `
@@ -81,6 +87,7 @@ class questionsView extends View {
             </button>`
             : ""
         }
+        
         ${
           question.optionE
             ? `
