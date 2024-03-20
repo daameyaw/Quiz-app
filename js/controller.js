@@ -7,6 +7,12 @@ import submitView from "./views/submitView.js";
 import View from "./views/view.js";
 import resultView from "./views/resultsView.js";
 
+const A = document.querySelector(".A");
+const B = document.querySelector(".B");
+const C = document.querySelector(".C");
+const D = document.querySelector(".D");
+const E = document.querySelector(".E");
+
 let category;
 const controlPopup = function () {};
 
@@ -34,6 +40,7 @@ const controlSubmit = async function () {
     startView.controlDecisionDisplay();
 
     questionsView.closePopup();
+    paginationView.startTimer();
 
     paginationView.renderPagination(model.state);
   } catch (error) {
@@ -49,8 +56,9 @@ const controlPagination = function (goToPage) {
   paginationView.renderPagination(model.state);
 };
 
-const controlMarking = function (selectedOption) {
-  console.log(model.state.questions[model.state.page - 1]);
+const curQuestion = model.state.questions[model.state.page - 1];
+
+const controlMarking = function (selectedOption, state) {
   if (
     selectedOption ===
     model.state.questions[model.state.page - 1].correctAnswerChar
@@ -62,19 +70,18 @@ const controlMarking = function (selectedOption) {
       selectedOption,
     };
     model.state.score++;
-    console.log(model.state.questions);
+    // console.log(model.state.questions);
   } else {
     console.log("wrong");
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: false,
     };
-    console.log(model.state.questions);
+    // console.log(model.state.questions);
   }
   // resultView.render(model.state.questions);
 };
 const controlResultsPage = function () {
-  console.log("u working");
   console.log(model.state.questions);
   resultView.render(model.state.questions);
 };
