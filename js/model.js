@@ -29,9 +29,17 @@ function transformQuestion(data) {
     isCorrectC: data.correct_answers.answer_c_correct,
     isCorrectD: data.correct_answers.answer_d_correct,
     isCorrectE: data.correct_answers.answer_e_correct,
+    options: [
+      data.answers.answer_a,
+      data.answers.answer_b,
+      data.answers.answer_c,
+      data.answers.answer_d,
+      data.answers.answer_e,
+    ],
     correctAnswer: getCorrectAnswer(data.correct_answers),
     correctAnswerChar: correctAnswer[7].toUpperCase(),
     isCorrect: false,
+    answered: "",
   };
 }
 
@@ -52,6 +60,7 @@ export const loadQuestions = async function (number, level, topic) {
     );
 
     state.questions = data.map(transformQuestion);
+    console.log(state.questions);
   } catch (error) {
     throw error;
   }
