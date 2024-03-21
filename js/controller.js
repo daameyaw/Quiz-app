@@ -7,11 +7,8 @@ import submitView from "./views/submitView.js";
 import View from "./views/view.js";
 import resultView from "./views/resultsView.js";
 
-const A = document.querySelector(".A");
-const B = document.querySelector(".B");
-const C = document.querySelector(".C");
-const D = document.querySelector(".D");
-const E = document.querySelector(".E");
+const selectTopic = document.querySelector(".select");
+const questionEl = document.querySelector(".question");
 
 let category;
 const controlPopup = function () {};
@@ -19,6 +16,7 @@ const controlPopup = function () {};
 const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
+
 const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
@@ -34,15 +32,17 @@ const controlSubmit = async function () {
     await model.loadQuestions(number, level, topic);
 
     questionsView._clear();
+    selectTopic.classList.add("hidden");
+    questionEl.style.padding = "0rem 4rem";
     // questionsView.render(model.state.questions);
     questionsView.render(model.getQuestionsByPage());
     submitView.renderSubmit();
     startView.controlDecisionDisplay();
 
     questionsView.closePopup();
-    paginationView.startTimer();
 
     paginationView.renderPagination(model.state);
+    paginationView.startTimer();
   } catch (error) {
     console.log(error);
     questionsView._clear();
