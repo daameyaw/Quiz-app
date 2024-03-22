@@ -1,7 +1,6 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 1.5rem 3rem;
 
   &__message {
@@ -31,7 +30,7 @@
 
 .main {
   //   background-color: orangered;
-  margin: 4rem auto;
+  margin: -1rem auto;
   max-width: 100rem;
   height: 80rem;
 }
@@ -50,6 +49,29 @@
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s;
+}
+
+.btn:not([disabled]):hover {
+  background-color: red;
+}
+
+.btn-option:not([disabled]):hover {
+  transform: translateX(1.2rem);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+}
+.answer {
+  transform: translateX(2rem);
+}
+.question__options input[type="checkbox"] {
+  float: left;
+  margin-right: 10px;
+}
+
+.question__options p {
+  display: inline-block;
 }
 
 .hidden {
