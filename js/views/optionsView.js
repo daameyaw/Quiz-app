@@ -1,4 +1,5 @@
 import View from "./view.js";
+import * as model from "../model.js";
 
 class optionsView extends View {
   _parentElement = document.querySelector(".question");
@@ -8,7 +9,7 @@ class optionsView extends View {
       const option = e.target.closest(".question__options");
       if (!option) return;
       const selectedOption = option.dataset.option;
-      handler(selectedOption);
+      handler(selectedOption, model.state.questions);
     });
   }
 }
