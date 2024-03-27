@@ -6,6 +6,7 @@ import optionsView from "./views/optionsView.js";
 import submitView from "./views/submitView.js";
 import View from "./views/view.js";
 import resultView from "./views/resultsView.js";
+import timerView from "./views/timerView.js";
 
 const selectTopic = document.querySelector(".select");
 const questionEl = document.querySelector(".question");
@@ -40,9 +41,10 @@ const controlSubmit = async function () {
     startView.controlDecisionDisplay();
 
     questionsView.closePopup();
+    timerView.renderTimer();
+    timerView.startTimer();
 
     paginationView.renderPagination(model.state);
-    paginationView.startTimer();
   } catch (error) {
     console.log(error);
     questionsView._clear();
