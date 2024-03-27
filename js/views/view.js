@@ -24,6 +24,13 @@ export default class View {
     this._clear();
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
+  renderTimer() {
+    const markup = this._generateMarkupP();
+
+    this._clear();
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    console.log("u workinh??");
+  }
 
   _clear() {
     this._parentElement.innerHTML = "";
