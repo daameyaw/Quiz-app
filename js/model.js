@@ -6,6 +6,7 @@ export const state = {
   resultsPerPage: 1,
   correctAnswer: "",
   score: 0,
+  // timeLeft: "",
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
