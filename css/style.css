@@ -543,10 +543,10 @@ body {
     box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.05); }
 
 .spinner {
-  margin: 5rem auto;
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto; }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .spinner__icon {
   height: 4rem;
