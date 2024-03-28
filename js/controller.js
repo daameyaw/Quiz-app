@@ -10,6 +10,8 @@ import timerView from "./views/timerView.js";
 
 const selectTopic = document.querySelector(".select");
 const questionEl = document.querySelector(".question");
+const timer = document.querySelector(".question__timer");
+const resultsPageLink = document.querySelector(".results-page");
 
 let category;
 const controlPopup = function () {};
@@ -18,6 +20,9 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
+const controlReturnToQuizByButton = function () {};
+const controlReturnToQuizByOverlay = function () {};
+const controlReturnToQuizByX = function () {};
 const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
@@ -41,6 +46,7 @@ const controlSubmit = async function () {
     startView.controlDecisionDisplay();
 
     questionsView.closePopup();
+    timer.classList.remove("hidden");
     timerView.renderTimer();
     timerView.startTimer();
 
@@ -86,6 +92,7 @@ const controlMarking = function (selectedOption, state) {
 const controlResultsPage = function () {
   console.log(model.state.questions);
   resultView.render(model.state.questions);
+  resultsPageLink.classList.add("active");
 };
 
 const init = function () {
@@ -98,5 +105,8 @@ const init = function () {
   optionsView.handleMarking(controlMarking);
   submitView.handleSubmitBtn(controlSubmitBtn);
   resultView.handleViewResults(controlResultsPage);
+  submitView.handleReturnToQuizByButton(controlReturnToQuizByButton);
+  submitView.handleReturnToQuizByOverlay(controlReturnToQuizByOverlay);
+  submitView.handleReturnToQuizByX(controlReturnToQuizByX);
 };
 init();
