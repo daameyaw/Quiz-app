@@ -1,5 +1,6 @@
 import View from "./view.js";
 import * as model from "../model.js";
+import timerView from "./timerView.js";
 
 const resultsPageLink = document.querySelector(".results-page");
 const dav = document.querySelector(".david");
