@@ -107,6 +107,31 @@ body {
   z-index: 100;
   transition: all 0.5s; }
 
+.bigger-radio {
+  transform: scale(1.1); }
+
+input[type="radio"].bigger-radio {
+  width: 15px;
+  height: 15px; }
+
+.letter {
+  display: inline-block;
+  width: 20px;
+  /* or some fixed width */
+  text-align: right;
+  margin-right: 5px; }
+
+.overlaySubmit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s; }
+
 .btn:not([disabled]):hover {
   background-color: red; }
 
@@ -288,7 +313,6 @@ body {
   .results__options {
     border: none;
     display: flex;
-    flex-direction: column;
     margin-bottom: 1.4rem;
     background-color: #fff;
     font-size: 1.5rem;
