@@ -6,6 +6,7 @@ export const state = {
   resultsPerPage: 1,
   correctAnswer: "",
   score: 0,
+  done: false,
   // timeLeft: "",
 };
 
