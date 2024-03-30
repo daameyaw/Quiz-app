@@ -20,9 +20,15 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
-const controlReturnToQuizByButton = function () {};
-const controlReturnToQuizByOverlay = function () {};
-const controlReturnToQuizByX = function () {};
+const controlReturnToQuizByButton = function () {
+  console.log("button");
+};
+const controlReturnToQuizByOverlay = function () {
+  console.log("overlay");
+};
+const controlReturnToQuizByX = function () {
+  console.log("X");
+};
 const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
@@ -94,6 +100,9 @@ const controlResultsPage = function () {
   resultView.render(model.state.questions);
   resultsPageLink.classList.add("active");
 };
+submitView.handleReturnToQuizByButton();
+submitView.handleReturnToQuizByOverlay();
+submitView.handleReturnToQuizByX();
 
 const init = function () {
   startView.controlStartDisplay();
@@ -105,8 +114,15 @@ const init = function () {
   optionsView.handleMarking(controlMarking);
   submitView.handleSubmitBtn(controlSubmitBtn);
   resultView.handleViewResults(controlResultsPage);
-  submitView.handleReturnToQuizByButton(controlReturnToQuizByButton);
-  submitView.handleReturnToQuizByOverlay(controlReturnToQuizByOverlay);
-  submitView.handleReturnToQuizByX(controlReturnToQuizByX);
+  // if (model.state.done) {
+  //   return;
+  // } else {
+  //   submitView.handleReturnToQuizByX(controlReturnToQuizByX);
+  // }
+  // if (model.state.done) {
+  //   return;
+  // } else {
+  //   submitView.handleReturnToQuizByOverlay(controlReturnToQuizByOverlay);
+  // }
 };
 init();
