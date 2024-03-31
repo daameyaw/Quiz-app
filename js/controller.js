@@ -20,15 +20,6 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
-const controlReturnToQuizByButton = function () {
-  console.log("button");
-};
-const controlReturnToQuizByOverlay = function () {
-  console.log("overlay");
-};
-const controlReturnToQuizByX = function () {
-  console.log("X");
-};
 const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
@@ -58,7 +49,6 @@ const controlSubmit = async function () {
 
     paginationView.renderPagination(model.state);
   } catch (error) {
-    console.log(error);
     questionsView._clear();
     questionsView.renderError();
   }
@@ -77,26 +67,20 @@ const controlMarking = function (selectedOption, state) {
     selectedOption ===
     model.state.questions[model.state.page - 1].correctAnswerChar
   ) {
-    console.log("correct");
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: true,
       selectedOption,
     };
     model.state.score++;
-    // console.log(model.state.questions);
   } else {
-    console.log("wrong");
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: false,
     };
-    // console.log(model.state.questions);
   }
-  // resultView.render(model.state.questions);
 };
 const controlResultsPage = function () {
-  console.log(model.state.questions);
   resultView.render(model.state.questions);
   resultsPageLink.classList.add("active");
 };
@@ -114,15 +98,5 @@ const init = function () {
   optionsView.handleMarking(controlMarking);
   submitView.handleSubmitBtn(controlSubmitBtn);
   resultView.handleViewResults(controlResultsPage);
-  // if (model.state.done) {
-  //   return;
-  // } else {
-  //   submitView.handleReturnToQuizByX(controlReturnToQuizByX);
-  // }
-  // if (model.state.done) {
-  //   return;
-  // } else {
-  //   submitView.handleReturnToQuizByOverlay(controlReturnToQuizByOverlay);
-  // }
 };
 init();
