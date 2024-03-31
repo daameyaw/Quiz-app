@@ -7,8 +7,6 @@ const dav = document.querySelector(".david");
 const container = document.querySelector(".container");
 
 const parentElement = document.querySelector(".resultsPage");
-console.log(parentElement);
-console.log(container);
 
 class resultView extends View {
   _parentElement = document.querySelector(".results");
@@ -69,124 +67,64 @@ class resultView extends View {
       <div class="bigger">
         <div class="results__container">
           <p class="results__text">${question.question}?</p>
+
+
           <button class="results__options">
-          <p>
-          ${
-            model.state.questions.selectedOption === "A"
-              ? `              <span
-           ><ion-icon
-             class="select__item-icon results__options--icon"
-             name="checkmark-done-outline"
-           ></ion-icon
-         ></span> `
-              : `<span
-         ><ion-icon
-           class="select__item-icon results__options--icon"
-           name="close-outline"
-         ></ion-icon
-       ></span>
-`
-          }
-         ${question.optionA}
-       </p>
+           <p>
+              <span class="letter">
+               <strong>A .</strong>
+              </span>
+              ${question.optionA}
+           </p>
           </button>
+
+
           <button class="results__options">
-          <p>
-          ${
-            model.state.questions.selectedOption === "B"
-              ? `              <span
-           ><ion-icon
-             class="select__item-icon results__options--icon"
-             name="checkmark-done-outline"
-           ></ion-icon
-         ></span> `
-              : `<span
-         ><ion-icon
-           class="select__item-icon results__options--icon"
-           name="close-outline"
-         ></ion-icon
-       ></span>
-`
-          }
-         ${question.optionB}
-       </p>
-     </button>
+           <p>
+             <span class="letter">
+              <strong>B .</strong>
+             </span>         
+             ${question.optionB}
+            </p>
+          </button>
+
           ${
             question.optionC
               ? `
               <button class="results__options">
-              <p>
-              ${
-                model.state.questions.selectedOption === "C"
-                  ? `              <span
-               ><ion-icon
-                 class="select__item-icon results__options--icon"
-                 name="checkmark-done-outline"
-               ></ion-icon
-             ></span> `
-                  : `<span
-             ><ion-icon
-               class="select__item-icon results__options--icon"
-               name="close-outline"
-             ></ion-icon
-           ></span>
-`
-              }
-             ${question.optionC}
-           </p>
-           </button>`
+                <p>
+                 <span class="letter">
+                  <strong>C .</strong>
+                 </span> 
+                 ${question.optionC}
+                </p>
+              </button>`
               : ""
           }
           ${
             question.optionD
               ? `
               <button class="results__options">
-              <p>
-              ${
-                model.state.questions.selectedOption === "D"
-                  ? `<span
-               ><ion-icon
-                 class="select__item-icon results__options--icon"
-                 name="checkmark-done-outline"
-               ></ion-icon
-             ></span> `
-                  : `<span
-             ><ion-icon
-               class="select__item-icon results__options--icon"
-               name="close-outline"
-             ></ion-icon
-           ></span>
-`
-              }
-             ${question.optionD}
-           </p>
-           </button>`
+                <p>
+                  <span class="letter">
+                   <strong>D .</strong>
+                  </span>
+                  ${question.optionD}
+               </p>
+              </button>`
               : ""
           }
           ${
             question.optionE
               ? `
               <button class="results__options">
-              <p>
-              ${
-                model.state.questions.selectedOption === "E"
-                  ? `<span
-               ><ion-icon
-                 class="select__item-icon results__options--icon"
-                 name="checkmark-done-outline"
-               ></ion-icon
-             ></span> `
-                  : `<span
-             ><ion-icon
-               class="select__item-icon results__options--icon"
-               name="close-outline"
-             ></ion-icon
-           ></span>
-`
-              }
-             ${question.optionE}
-           </p>
-           </button>`
+               <p>
+                  <span class="letter">
+                   <strong>E .</strong>
+                  </span>
+                  ${question.optionE}
+                </p>
+              </button>`
               : ""
           }  
         </div>
