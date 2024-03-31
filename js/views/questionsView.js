@@ -14,7 +14,6 @@ class questionsView extends View {
     overlay.classList.add("hidden");
   }
 
-  // print() {}
 
   renderSpinner() {
     const markup = ` <div class="spinner">
@@ -56,22 +55,23 @@ class questionsView extends View {
       <div class="options">
 
       <button class="question__options btn A" data-option="A">
-        <input type="checkbox">
-        <p>${question.optionA}</p>
-      </button>
-      
-      <button class="question__options btn B" data-option="B">
-       <input type="checkbox">
-        <p>${question.optionB}</p>
-      </button>
-
+      <input type="radio" name="questionOptions" class="bigger-radio">
+      <p>${question.optionA}</p> 
+    </button>
+          
+    <button class="question__options btn B" data-option="B">
+    <input type="radio" name="questionOptions" class="bigger-radio">
+    <p>${question.optionB}</p> 
+  </button>
+  
       ${
         question.optionC
           ? `
           <button class="question__options btn C" data-option="C">
-           <input type="checkbox">
-            <p>${question.optionC}</p>
-          </button>`
+  <input type="radio" name="questionOptions" class="bigger-radio">
+  <p>${question.optionC}</p> 
+</button>
+`
           : ""
       }
 
@@ -79,9 +79,10 @@ class questionsView extends View {
         question.optionD
           ? `
           <button class="question__options btn D" data-option="D">
-           <input type="checkbox">
-            <p>${question.optionD}</p>
-          </button>`
+  <input type="radio" name="questionOptions" class="bigger-radio">
+  <p>${question.optionD}</p> 
+</button>
+`
           : ""
       }
 
@@ -89,9 +90,10 @@ class questionsView extends View {
         question.optionE
           ? `
           <button class="question__options btn E" data-option="E">
-           <input type="checkbox">
-            <p>${question.optionE}</p>
-          </button> `
+  <input type="radio" name="questionOptions" class="bigger-radio">
+  <p>${question.optionE}</p> 
+</button>
+ `
           : ""
       }
       </div>
@@ -100,59 +102,6 @@ class questionsView extends View {
 
     return htmlArray.join("");
   }
-  // _generateMarkup(questions) {
-  //   const htmlArray = questions.map((question, i) => {
-  //     return `
-  //       <div class="quiz__number">Question ${model.state.page}/${
-  //       model.state.questions.length
-  //     }</div>
-  //       <p class="question__text">${question.question}</p>
-
-  //       <div class="options">
-
-  //       <button class="question__options btn A  " data-option="A"
-  //       >
-  //         <p>${question.optionA}</p>
-  //       </button>
-
-  //       <button class="question__options btn B " data-option="B"
-  //       ><p>${question.optionB}</p></button>
-
-  //       ${
-  //         question.optionC
-  //           ? `
-  //           <button class="question__options btn C " data-option="C"
-  //           >
-  //             <p>${question.optionC}</p>
-  //           </button>`
-  //           : ""
-  //       }
-
-  //       ${
-  //         question.optionD
-  //           ? `
-  //           <button class="question__options btn D " data-option="D"
-  //           >
-  //             <p>${question.optionD}</p>
-  //           </button>`
-  //           : ""
-  //       }
-
-  //       ${
-  //         question.optionE
-  //           ? `
-  //           <button class=" question__options btn E " data-option="E"
-  //           >
-  //             <p>${question.optionE}</p>
-  //           </button> `
-  //           : ""
-  //       }
-  //       </div>
-  //     `;
-  //   });
-
-  //   return htmlArray.join("");
-  // }
 }
 
 export default new questionsView();
