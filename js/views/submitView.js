@@ -1,7 +1,8 @@
 import View from "./view.js";
+import * as model from "../model.js";
 
 const decisionPopup = document.querySelector(".submit");
-const overlay = document.querySelector(".overlay");
+const overlaySubmit = document.querySelector(".overlaySubmit");
 const returnToQuiz = document.querySelector(".submit-popup__btn--violet");
 const popup__closebtn = document.querySelector(".popup__close-btn");
 
@@ -11,32 +12,27 @@ class submitView extends View {
   handleSubmitBtn(handler) {
     this._parentElement.addEventListener("click", function (e) {
       decisionPopup.classList.remove("hidden");
+
       handler();
     });
   }
-  handleReturnToQuizByButton(handler) {
+  handleReturnToQuizByButton() {
     returnToQuiz.addEventListener("click", function (e) {
       decisionPopup.classList.add("hidden");
-      overlay.classList.add("hidden");
-      handler();
     });
   }
 
-  handleReturnToQuizByOverlay(handler) {
-    overlay.addEventListener("click", function (e) {
-      console.log("overlay clicked");
+  handleReturnToQuizByOverlay() {
+    overlaySubmit.addEventListener("click", function (e) {
       decisionPopup.classList.add("hidden");
-      overlay.classList.add("hidden");
-      handler();
+      overlaySubmit.classList.add("hidden");
     });
   }
 
-  handleReturnToQuizByX(handler) {
+  handleReturnToQuizByX() {
     popup__closebtn.addEventListener("click", function (e) {
-      console.log("X clicked");
       decisionPopup.classList.add("hidden");
-      overlay.classList.add("hidden");
-      handler();
+      overlaySubmit.classList.add("hidden");
     });
   }
 
