@@ -9,7 +9,9 @@ class optionsView extends View {
       const option = e.target.closest(".question__options");
       if (!option) return;
       const selectedOption = option.dataset.option;
-      handler(selectedOption, model.state.questions);
+      const selectedAnswer = option.textContent;
+      console.log(selectedAnswer);
+      handler(selectedOption, model.state.questions, selectedAnswer);
     });
   }
 }
