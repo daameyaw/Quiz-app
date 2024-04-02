@@ -36,12 +36,21 @@ class resultView extends View {
       ${
         i === 0
           ? `
+          <div class="parent">
+          <div class="child">
+            <button>Retake Quiz</button> 
+          </div>
           <div class="results__score">
             <h3>total score</h3>
             <p>
               ${model.state.score}/${model.state.questions.length}
             </p>
-          </div> `
+          </div>
+          <div class="child">
+            <button>Take another one😉</button>
+          </div>
+        </div>
+   `
           : ""
       }
 
@@ -128,20 +137,21 @@ class resultView extends View {
               : ""
           }  
         </div>
-        ${
-          question.explanation
-            ? `
+        
             <div class="question__explanation">
-            <h3 class="question__explanation-heading">Explanation</h3>
+            <p class="question__explanation-text question__explanation-text--margin"">Your Answer ${
+              question.selectedOption
+            }</p>
             <p class="question__explanation-text">
-            ${question.explanation}
+            Correct Answer : ${question.correctAnswerChar}
             </p>
-          </div>`
-            : ""
-        }
+          </div>
+            
       </div>
     </div> 
+
     </div>
+  
 `;
     });
 
