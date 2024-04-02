@@ -34,6 +34,8 @@ function transformQuestion(data) {
     correctAnswer: getCorrectAnswer(data.correct_answers),
     correctAnswerChar: correctAnswer[7].toUpperCase(),
     isCorrect: false,
+    selectedOption: "",
+    selectedAnswer: "",
   };
 }
 
