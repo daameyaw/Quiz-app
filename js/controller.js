@@ -7,7 +7,7 @@ import submitView from "./views/submitView.js";
 import View from "./views/view.js";
 import resultView from "./views/resultsView.js";
 import timerView from "./views/timerView.js";
-
+import resultsbuttonsView from "./views/resultsbuttonsView.js";
 const selectTopic = document.querySelector(".select");
 const questionEl = document.querySelector(".question");
 const timer = document.querySelector(".question__timer");
@@ -62,7 +62,9 @@ const controlPagination = function (goToPage) {
 
 const curQuestion = model.state.questions[model.state.page - 1];
 
-const controlMarking = function (selectedOption, state) {
+const controlMarking = function (selectedOption, state, selectedAnswer) {
+  // model.state.selectedAnswer = selectedAnswer;
+
   if (
     selectedOption ===
     model.state.questions[model.state.page - 1].correctAnswerChar
@@ -70,19 +72,23 @@ const controlMarking = function (selectedOption, state) {
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: true,
-      selectedOption,
+      selectedOption: selectedOption,
     };
     model.state.score++;
+    console.log(model.state.questions[model.state.page - 1]);
   } else {
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: false,
+      selectedOption: selectedOption,
     };
+    console.log(model.state.questions[model.state.page - 1]);
   }
 };
 const controlResultsPage = function () {
   resultView.render(model.state.questions);
   resultsPageLink.classList.add("active");
+  resultsbuttonsView.renderResultsButton();
 };
 submitView.handleReturnToQuizByButton();
 submitView.handleReturnToQuizByOverlay();
