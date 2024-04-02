@@ -286,6 +286,20 @@ input[type="radio"].bigger-radio {
   margin-bottom: 10px;
   /* Adjust the margin as needed */ }
 
+.parent {
+  display: flex;
+  justify-content: space-around; }
+
+.child {
+  padding: 20px; }
+
+button {
+  border: none; }
+
+button:hover {
+  background-color: #ddd;
+  cursor: pointer; }
+
 .question__options input {
   margin-right: 10px;
   /* Adjust the margin as needed */
@@ -364,14 +378,14 @@ input[type="radio"].bigger-radio {
       max-width: 50rem; } }
 
 .question__explanation {
+  text-align: center;
   padding: 2rem;
   padding-left: 1rem;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
   border-radius: 15px;
   box-shadow: 0 1.2rem 6rem rgba(0, 0, 0, 0.1);
-  transition: all 0.2s;
-  background-color: rgba(216, 220, 222, 0.5); }
+  transition: all 0.2s; }
   .question__explanation:hover {
     transform: scale(1.01); }
   .question__explanation-heading {
@@ -383,6 +397,9 @@ input[type="radio"].bigger-radio {
   .question__explanation-text {
     word-wrap: break-word;
     font-size: 1.6rem; }
+
+.question__explanation-text--margin {
+  margin-bottom: 1rem; }
 
 .error__msg {
   font-size: 1.6rem;
