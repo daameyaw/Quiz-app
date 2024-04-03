@@ -50,6 +50,33 @@
   z-index: 100;
   transition: all 0.5s;
 }
+.bigger-radio {
+  transform: scale(1.1);
+}
+
+input[type="radio"].bigger-radio {
+  width: 15px;
+  height: 15px;
+}
+
+.letter {
+  display: inline-block;
+  width: 20px; /* or some fixed width */
+  text-align: right;
+  margin-right: 5px;
+}
+
+.overlaySubmit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
 
 .btn:not([disabled]):hover {
   background-color: red;
@@ -258,6 +285,23 @@
   margin-bottom: 10px; /* Adjust the margin as needed */
 }
 
+.parent {
+  display: flex;
+  justify-content: space-around;
+}
+
+.child {
+  padding: 20px;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
 .question__options input {
   margin-right: 10px; /* Adjust the margin as needed */
   border: none;
@@ -294,7 +338,7 @@
   &__options {
     border: none;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     margin-bottom: 1.4rem;
     // margin-left: 1.3rem;
     background-color: #fff;
@@ -365,6 +409,7 @@
 .question__explanation {
   // height: 14rem;
   // width: 39rem;
+  text-align: center;
   padding: 2rem;
   padding-left: 1rem;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
@@ -372,7 +417,7 @@
   border-radius: 15px;
   box-shadow: 0 1.2rem 6rem rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
-  background-color: rgba(#d8dcde, 0.5);
+  // background-color: rgba(#d8dcde, 0.5);
 
   &:hover {
     transform: scale(1.01);
@@ -393,6 +438,9 @@
     font-size: 1.6rem;
     // display: inline-block;
   }
+}
+.question__explanation-text--margin {
+  margin-bottom: 1rem;
 }
 
 .error {
