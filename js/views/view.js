@@ -29,7 +29,12 @@ export default class View {
 
     this._clear();
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
-    console.log("u workinh??");
+  }
+  renderResultsButton() {
+    const markup = this._generateMarkupB();
+
+    // this._clear();
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
   _clear() {
