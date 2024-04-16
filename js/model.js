@@ -7,12 +7,10 @@ export const state = {
   correctAnswer: "",
   score: 0,
   done: false,
-  // timeLeft: "",
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
 const category = "Linux";
-// let transformedQuestions;
 let correctAnswer;
 
 function transformQuestion(data) {
