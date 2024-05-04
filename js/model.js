@@ -34,6 +34,7 @@ function transformQuestion(data) {
     isCorrect: false,
     selectedOption: "",
     selectedAnswer: "",
+    answered: false,
   };
 }
 
