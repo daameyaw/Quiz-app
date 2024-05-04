@@ -20,6 +20,8 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
+const controlRetakeQuiz = function () {};
+
 const controlSubmit = async function () {
   try {
     const level = startView.getLevel();
@@ -41,6 +43,10 @@ const controlSubmit = async function () {
     questionsView.render(model.getQuestionsByPage());
     submitView.renderSubmit();
     startView.controlDecisionDisplay();
+    const answered = model.state.questions.map(
+      (questions) => questions.correctAnswerChar
+    );
+    console.log(answered);
 
     questionsView.closePopup();
     timer.classList.remove("hidden");
@@ -64,31 +70,47 @@ const curQuestion = model.state.questions[model.state.page - 1];
 
 const controlMarking = function (selectedOption, state, selectedAnswer) {
   // model.state.selectedAnswer = selectedAnswer;
+  // console.log(model.state.questions[model.state.page - 1].correctAnswerChar);
+  console.log(selectedOption);
 
+  //if selectedOption is Correct
   if (
     selectedOption ===
     model.state.questions[model.state.page - 1].correctAnswerChar
   ) {
+    if (model.state.questions[model.state.page - 1].answered === false) {
+      model.state.score++;
+    }
+
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: true,
       selectedOption: selectedOption,
+      answered: true,
     };
-    model.state.score++;
+    console.log(model.state.score);
     console.log(model.state.questions[model.state.page - 1]);
-  } else {
+  }
+  //when selectedOption is incorrect
+  else {
+    if (model.state.questions[model.state.page - 1].answered === true) {
+      if (model.state.score >= 1) model.state.score--;
+    }
+
     model.state.questions[model.state.page - 1] = {
       ...model.state.questions[model.state.page - 1],
       isCorrect: false,
       selectedOption: selectedOption,
+      answered: false,
     };
+    console.log(model.state.score);
     console.log(model.state.questions[model.state.page - 1]);
   }
 };
 const controlResultsPage = function () {
   resultView.render(model.state.questions);
   resultsPageLink.classList.add("active");
-  resultsbuttonsView.renderResultsButton();
+  // resultsbuttonsView.renderResultsButton();
 };
 submitView.handleReturnToQuizByButton();
 submitView.handleReturnToQuizByOverlay();
@@ -104,5 +126,6 @@ const init = function () {
   optionsView.handleMarking(controlMarking);
   submitView.handleSubmitBtn(controlSubmitBtn);
   resultView.handleViewResults(controlResultsPage);
+  resultView.handleRetakeQuiz(controlRetakeQuiz);
 };
 init();
