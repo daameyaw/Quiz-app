@@ -5,6 +5,8 @@ import timerView from "./timerView.js";
 const resultsPageLink = document.querySelector(".results-page");
 const dav = document.querySelector(".david");
 const container = document.querySelector(".container");
+const retake = document.querySelector(".retake");
+const another = document.querySelector(".another");
 
 const parentElement = document.querySelector(".resultsPage");
 
@@ -15,6 +17,13 @@ class resultView extends View {
     resultsPageLink.addEventListener("click", function () {
       parentElement.classList.remove("hidden");
       container.classList.add("hidden");
+      handler();
+    });
+  }
+
+  handleRetakeQuiz(handler) {
+    retake.addEventListener("click", function () {
+      console.log(retake);
       handler();
     });
   }
@@ -37,7 +46,7 @@ class resultView extends View {
         i === 0
           ? `
           <div class="parent">
-          <div class="child">
+          <div class="child retake">
             <button>Retake Quiz</button> 
           </div>
           <div class="results__score">
@@ -46,7 +55,7 @@ class resultView extends View {
               ${model.state.score}/${model.state.questions.length}
             </p>
           </div>
-          <div class="child">
+          <div class="child another">
             <button>Take another one😉</button>
           </div>
         </div>
