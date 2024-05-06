@@ -57,7 +57,7 @@ class resultView extends View {
           </div>
           <div class="child another">
             <button>Take another one😉</button>
-          </div>
+          </div> 
         </div>
    `
           : ""
