@@ -20,7 +20,7 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
-const controlRetakeQuiz = function () {};
+// const controlRetakeQuiz = function () {};
 
 const controlSubmit = async function () {
   try {
