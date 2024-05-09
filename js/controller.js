@@ -20,7 +20,9 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
-const controlRetakeQuiz = function () {};
+const controlRetakeQuiz = function () {
+  console.log(model.state);
+};
 
 const controlSubmit = async function () {
   try {
@@ -43,10 +45,10 @@ const controlSubmit = async function () {
     questionsView.render(model.getQuestionsByPage());
     submitView.renderSubmit();
     startView.controlDecisionDisplay();
-    const answered = model.state.questions.map(
-      (questions) => questions.correctAnswerChar
-    );
-    console.log(answered);
+    // const answered = model.state.questions.map(
+    //   (questions) => questions.correctAnswerChar
+    // );
+    // console.log(answered);
 
     questionsView.closePopup();
     timer.classList.remove("hidden");
