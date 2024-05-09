@@ -7,6 +7,8 @@ const dav = document.querySelector(".david");
 const container = document.querySelector(".container");
 const retake = document.querySelector(".retake");
 const another = document.querySelector(".another");
+const restartSubmit = document.querySelector(".restartSubmit");
+const restartPopup = document.querySelector(".restartPopup");
 
 const parentElement = document.querySelector(".resultsPage");
 
@@ -20,13 +22,27 @@ class resultView extends View {
       handler();
     });
   }
+  // handleRestartPopup(handler) {
+  //   restartSubmit.addEventListener("click", function () {
+  //     parentElement.classList.remove("hidden");
+  //     container.classList.add("hidden");
+  //     handler();
+  //   });
+  // }
 
   handleRetakeQuiz(handler) {
     retake.addEventListener("click", function () {
       console.log(retake);
+      console.log(restartPopup);
+      restartSubmit.classList.remove("hidden");
       handler();
     });
   }
+
+  //after fixing this
+  //When the Yes.Restart button is clicked
+  //1.Clean up the questions
+  //2.Call the render method to clear the current page(result page) and print then questions page back using the function
 
   _generateMarkup() {
     return `
@@ -37,31 +53,32 @@ class resultView extends View {
     )};
     `;
   }
-
   _generateMarkup(questions) {
     const html = questions.map((question, i) => {
       return `
       <div>
-      ${
-        i === 0
-          ? `
-          <div class="parent">
-          <div class="child retake">
-            <button>Retake Quiz</button> 
-          </div>
-          <div class="results__score">
-            <h3>total score</h3>
-            <p>
-              ${model.state.score}/${model.state.questions.length}
-            </p>
-          </div>
-          <div class="child another">
-            <button>Take another one😉</button>
-          </div> 
-        </div>
-   `
-          : ""
-      }
+        ${
+          i === 0
+            ? `
+              <div class="parent">
+              <div class="child retake">
+                
+              </div>
+              <div class="results__score">
+                <h3>total score</h3>
+                <p>
+                  ${model.state.score}/${model.state.questions.length}
+                </p>
+              </div>
+              <div class="child another">
+                
+              </div>
+            </div>
+        `
+            : ""
+        }
+      
+      
 
     <div class="results__question">
       <p class="results__question-number">Question ${i + 1}</p>
