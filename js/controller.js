@@ -23,6 +23,46 @@ const controlClosePopup = function () {};
 const controlRetakeQuiz = function () {
   console.log(model.state);
 };
+function resetQuizState() {
+  // Reset questions array
+  model.state.questions = model.state.questions.map((question) => {
+    return {
+      ...question,
+      isCorrect: false,
+      selectedOption: "",
+      selectedAnswer: "",
+      answered: false,
+    };
+  });
+
+  // Reset state properties
+  model.state.page = 1;
+  model.state.resultsPerPage = 1;
+  model.state.correctAnswer = "";
+  model.state.score = 0;
+  model.state.done = false;
+}
+
+const controlRestartQuiz = function () {
+  //after fixing this
+  //When the Yes.Restart button is clicked
+  //1.Clean up the questions
+  //2.Call the render method to clear the current page(result page) and print then questions page back using the function
+
+  resetQuizState();
+  console.log(model.state);
+  questionsView._clear();
+  selectTopic.classList.add("hidden");
+  questionEl.style.padding = "0rem 4rem";
+
+  questionsView.render(model.getQuestionsByPage());
+  submitView.renderSubmit();
+  startView.controlDecisionDisplay();
+  // timer.classList.remove("hidden");
+  // // timerView.renderTimer();
+  // // timerView.startTimer();
+  paginationView.renderPagination(model.state);
+};
 
 const controlSubmit = async function () {
   try {
@@ -45,10 +85,6 @@ const controlSubmit = async function () {
     questionsView.render(model.getQuestionsByPage());
     submitView.renderSubmit();
     startView.controlDecisionDisplay();
-    const answered = model.state.questions.map(
-      (questions) => questions.correctAnswerChar
-    );
-    console.log(answered);
 
     questionsView.closePopup();
     timer.classList.remove("hidden");
@@ -117,6 +153,9 @@ const controlResultsPage = function () {
 submitView.handleReturnToQuizByButton();
 submitView.handleReturnToQuizByOverlay();
 submitView.handleReturnToQuizByX();
+resultView.handleRetakeQuizByButton();
+resultView.handleRetakeQuizByOverlay();
+resultView.handleRetakeQuizByX();
 
 const init = function () {
   startView.controlStartDisplay();
@@ -129,5 +168,6 @@ const init = function () {
   submitView.handleSubmitBtn(controlSubmitBtn);
   resultView.handleViewResults(controlResultsPage);
   resultView.handleRetakeQuiz(controlRetakeQuiz);
+  resultView.handleRestartQuiz(controlRestartQuiz);
 };
 init();
