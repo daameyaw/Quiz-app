@@ -9,6 +9,9 @@ const decision = document.querySelector(".decision");
 const quizSubmit = document.querySelector(".quiz__submit");
 const submitPopup = document.querySelector(".submit-popup");
 const selectTopic = document.querySelector(".select");
+const restartPopup = document.querySelector(".restartPopup");
+const overlayRetakeQuiz = document.querySelector(".overlayRetakeQuiz");
+const restartSubmit = document.querySelector(".restartSubmit");
 
 class startView extends View {
   _parentElement = document.querySelector(".select");
