@@ -2,6 +2,7 @@ import View from "./view.js";
 import * as model from "../model.js";
 import timerView from "./timerView.js";
 
+const decisionPopup = document.querySelector(".submit");
 const resultsPageLink = document.querySelector(".results-page");
 const dav = document.querySelector(".david");
 const container = document.querySelector(".container");
@@ -9,6 +10,12 @@ const retake = document.querySelector(".retake");
 const another = document.querySelector(".another");
 const restartSubmit = document.querySelector(".restartSubmit");
 const restartPopup = document.querySelector(".restartPopup");
+const overlayRetakeQuiz = document.querySelector(".overlayRetakeQuiz");
+const returnToQuizButton = document.querySelector(
+  ".retakequiz-popup__btn--violet"
+);
+const popup__closebtn = document.querySelector(".retakequiz-popup__close-btn");
+const restartQuizButton = document.querySelector(".restart-page");
 
 const parentElement = document.querySelector(".resultsPage");
 
@@ -17,32 +24,54 @@ class resultView extends View {
 
   handleViewResults(handler) {
     resultsPageLink.addEventListener("click", function () {
+      // decisionPopup.classList.add("hidden");
+      console.log(decisionPopup);
       parentElement.classList.remove("hidden");
       container.classList.add("hidden");
       handler();
     });
   }
-  // handleRestartPopup(handler) {
-  //   restartSubmit.addEventListener("click", function () {
-  //     parentElement.classList.remove("hidden");
-  //     container.classList.add("hidden");
-  //     handler();
-  //   });
-  // }
 
   handleRetakeQuiz(handler) {
     retake.addEventListener("click", function () {
       console.log(retake);
-      console.log(restartPopup);
+      console.log(restartSubmit);
       restartSubmit.classList.remove("hidden");
+      overlayRetakeQuiz.classList.remove("hidden");
       handler();
     });
   }
 
-  //after fixing this
-  //When the Yes.Restart button is clicked
-  //1.Clean up the questions
-  //2.Call the render method to clear the current page(result page) and print then questions page back using the function
+  handleRetakeQuizByButton() {
+    returnToQuizButton.addEventListener("click", function (e) {
+      restartSubmit.classList.add("hidden");
+    });
+  }
+
+  handleRetakeQuizByOverlay() {
+    overlayRetakeQuiz.addEventListener("click", function (e) {
+      restartSubmit.classList.add("hidden");
+      overlayRetakeQuiz.classList.add("hidden");
+    });
+  }
+
+  handleRetakeQuizByX() {
+    popup__closebtn.addEventListener("click", function (e) {
+      restartSubmit.classList.add("hidden");
+      overlayRetakeQuiz.classList.add("hidden");
+    });
+  }
+
+  handleRestartQuiz(handler) {
+    restartQuizButton.addEventListener("click", function (e) {
+      console.log("restart Quiz");
+      parentElement.classList.add("hidden");
+      container.classList.remove("hidden");
+      decisionPopup.classList.add("hidden");
+
+      handler();
+    });
+  }
 
   _generateMarkup() {
     return `
