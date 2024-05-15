@@ -7,6 +7,7 @@ export const state = {
   correctAnswer: "",
   score: 0,
   done: false,
+  restarted: false,
 };
 
 const apiKey = "5i5bYGliQcGzqZnfNYTvJ61Wb1zVzIu0s29fsRbg";
