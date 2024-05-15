@@ -5,6 +5,7 @@ const decisionPopup = document.querySelector(".submit");
 const overlaySubmit = document.querySelector(".overlaySubmit");
 const returnToQuiz = document.querySelector(".submit-popup__btn--violet");
 const popup__closebtn = document.querySelector(".popup__close-btn");
+const restartSubmit = document.querySelector(".restartSubmit");
 
 class submitView extends View {
   _parentElement = document.querySelector(".decision");
@@ -12,6 +13,7 @@ class submitView extends View {
   handleSubmitBtn(handler) {
     this._parentElement.addEventListener("click", function (e) {
       decisionPopup.classList.remove("hidden");
+      // restartSubmit.classList.remove("hidden");
 
       handler();
     });
