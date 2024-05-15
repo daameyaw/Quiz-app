@@ -28,7 +28,7 @@ class timerView extends View {
         goBackBtn.disabled = true;
       }
       if (resultsPageLink.classList.contains("active")) {
-        clearInterval(timer);
+        // clearInterval(timer);
         timerEl.textContent = "Time up!";
         decisionPopup.classList.remove("hidden");
         goBackBtn.disabled = true;
