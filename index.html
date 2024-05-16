@@ -38,6 +38,30 @@
     <title>Quizly</title>
   </head>
   <body>
+    <div class="restartSubmit overlayRetakeQuiz hidden">
+      <div class="retakequiz-popup restartPopup">
+        <div>
+          <div class="retakequiz-popup__close-btn">&times</div>
+          <h4 class="retakequiz-popup__heading">
+            Are you sure you want to restart quiz?
+          </h4>
+          <p class="retakequiz-popup__message">
+            This will restart your quiz and all previous answers will be
+            cleared. Are you sure you want to do this?
+          </p>
+          <button class="retakequiz-popup__btn retakequiz-popup__btn--violet">
+            Return back
+          </button>
+          <button
+            class="retakequiz-popup__btn retakequiz-popup__btn--green restart-page"
+          >
+            <a href="#">Restart</a>
+          </button>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="header">
         <div class="header__logo head">
@@ -114,29 +138,33 @@
               <div></div>
             </div>
           </div>
-          <div class="submit restartSubmit overlaySubmit hidden">
-            <div class="submit-popup restartPopup">
+          <!-- <div class="overlay hidden"></div> -->
+
+          <!-- <div class="restartSubmit overlayRetakeQuiz hidden">
+            <div class="retakequiz-popup restartPopup">
               <div>
                 <div class="popup__close-btn">&times</div>
-                <h4 class="submit-popup__heading">
+                <h4 class="retakequiz-popup__heading">
                   Are you sure you want to restart quiz?
                 </h4>
-                <p class="submit-popup__message">
+                <p class="retakequiz-popup__message">
                   This will restart your quiz and all previous answers will be
                   cleared. Are you sure you want to do this?
                 </p>
-                <button class="submit-popup__btn submit-popup__btn--violet">
+                <button
+                  class="retakequiz-popup__btn retakequiz-popup__btn--violet"
+                >
                   Return back
                 </button>
                 <button
-                  class="submit-popup__btn submit-popup__btn--green restart-page"
+                  class="retakequiz-popup__btn retakequiz-popup__btn--green restart-page"
                 >
                   <a href="#">Restart</a>
                 </button>
               </div>
               <div></div>
             </div>
-          </div>
+          </div> -->
 
           <ul class="select">
             <li class="select__item" data-category="Linux">
