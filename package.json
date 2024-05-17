@@ -9,6 +9,7 @@
   "author": "David",
   "license": "ISC",
   "devDependencies": {
+    "globals": "^15.2.0",
     "node-sass": "^9.0.0"
   }
 }
