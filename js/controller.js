@@ -59,8 +59,8 @@ const controlRestartQuiz = function () {
   submitView.renderSubmit();
   startView.controlDecisionDisplay();
   timer.classList.remove("hidden");
-  // timerView.renderTimer();
-  // timerView.startTimer();
+  timerView.renderTimer();
+  timerView.startTimer();
   paginationView.renderPagination(model.state);
 };
 
