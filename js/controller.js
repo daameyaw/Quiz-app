@@ -61,7 +61,7 @@ const controlRestartQuiz = function () {
   timer.classList.remove("hidden");
   timerView.renderTimer();
   timerView.startTimer();
-  // paginationView.renderPagination(model.state);
+  paginationView.renderPagination(model.state);
 };
 
 const controlSubmit = async function () {
