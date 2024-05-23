@@ -24,7 +24,8 @@ class startView extends View {
   controlDecisionDisplay() {}
 
   clearStart() {
-    quizStart.innerHTML = "";
+    quizStart.classList.add("hidden");
+    // quizStart.innerHTML = "";
   }
 
   //OPENING AND CLOSING OF THE START POPUP
