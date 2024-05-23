@@ -43,6 +43,13 @@ function resetQuizState() {
   model.state.done = false;
 }
 
+const controlTakingAnotherQuiz = function () {
+  console.log("controlTakingAnotherQuiz");
+  questionsView._clear();
+  timer.classList.add("hidden");
+  submitView._clear();
+};
+
 const controlRestartQuiz = function () {
   //after fixing this
   //When the Yes.Restart button is clicked
@@ -169,5 +176,6 @@ const init = function () {
   resultView.handleViewResults(controlResultsPage);
   resultView.handleRetakeQuiz(controlRetakeQuiz);
   resultView.handleRestartQuiz(controlRestartQuiz);
+  resultView.handleTakingAnotherQuiz(controlTakingAnotherQuiz);
 };
 init();
