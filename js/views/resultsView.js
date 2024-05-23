@@ -16,6 +16,9 @@ const returnToQuizButton = document.querySelector(
 );
 const popup__closebtn = document.querySelector(".retakequiz-popup__close-btn");
 const restartQuizButton = document.querySelector(".restart-page");
+const quizStart = document.querySelector(".start-quiz");
+const selectTopic = document.querySelector(".select");
+const goBackBtn = document.querySelector(".submit-popup__btn--violet");
 
 const parentElement = document.querySelector(".resultsPage");
 
@@ -32,12 +35,32 @@ class resultView extends View {
     });
   }
 
+  //Taking another quiz
+  handleTakingAnotherQuiz(handler) {
+    another.addEventListener("click", function () {
+      resultsPageLink.classList.remove("active");
+      parentElement.classList.add("hidden");
+      container.classList.remove("hidden");
+      quizStart.classList.remove("hidden");
+      selectTopic.classList.remove("hidden");
+      decisionPopup.classList.add("hidden");
+      goBackBtn.disabled = false;
+
+      handler();
+    });
+  }
+
+  //Retaking current quiz
   handleRetakeQuiz(handler) {
     retake.addEventListener("click", function () {
       console.log(retake);
       console.log(restartSubmit);
+      resultsPageLink.classList.remove("active");
+
       restartSubmit.classList.remove("hidden");
       overlayRetakeQuiz.classList.remove("hidden");
+      goBackBtn.disabled = false;
+
       handler();
     });
   }
