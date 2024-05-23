@@ -18,9 +18,7 @@ class timerView extends View {
 
       timerEl.textContent = `${minutes}:${seconds}`;
 
-      timeLeft--;
-
-      if (timeLeft < 0) {
+      if (timeLeft === 0) {
         clearInterval(timer);
         timerEl.textContent = "Time up!";
         model.state.done = true;
@@ -33,6 +31,7 @@ class timerView extends View {
         decisionPopup.classList.remove("hidden");
         goBackBtn.disabled = true;
       }
+      timeLeft--;
     };
 
     const totalTime = model.state.questions.length * 30; // 5 minutes in seconds
