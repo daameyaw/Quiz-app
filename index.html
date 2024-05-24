@@ -15,10 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/img/Favicon-32x32.png" />
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- <link rel="stylesheet" href="" /> -->
@@ -35,7 +33,7 @@
     <script type="module" src="./js/views/timerView.js"></script>
     <script type="module" src="./js/views/resultsbuttons.js"></script>
 
-    <title>Quizly</title>
+    <title>QUIZLY || Test Your Tech Knowledge</title>
   </head>
   <body>
     <div class="restartSubmit overlayRetakeQuiz hidden">
@@ -55,7 +53,7 @@
           <button
             class="retakequiz-popup__btn retakequiz-popup__btn--green restart-page"
           >
-            <a href="#">Restart</a>
+            <a href="#" class="btnDec">Restart</a>
           </button>
         </div>
         <div></div>
@@ -79,35 +77,35 @@
                 Let's get your quiz ready :)
               </h3>
               <div class="popup__number">
-                <p class="popup__number-heading">
+                <p class="popup__number-heading uppercase">
                   What topic would you like to test yourself on?
                 </p>
                 <form class="popup__number-form">
-                  <select class="selectTopic" name="Number" id="">
-                    <option value="Linux">Linux</option>
-                    <option value="DevOps">DevOps</option>
-                    <option value="Docker">Docker</option>
-                    <option value="Bash">Bash</option>
+                  <select class="selectTopic selectD" name="Number" id="">
+                    <option value="Linux">LINUX</option>
+                    <option value="DevOps">DEVOPS</option>
+                    <option value="Docker">DOCKER</option>
+                    <option value="Bash">BASH</option>
                   </select>
                 </form>
 
-                <p class="popup__number-heading">
+                <p class="popup__number-heading uppercase">
                   How many questions would you like to answer?
                 </p>
                 <form class="popup__number-form">
-                  <select class="selectNumber" name="Number" id="">
+                  <select class="selectNumber selectD" name="Number" id="">
                     <option value="1">1</option>
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="30">30</option>
                   </select>
                 </form>
-                <h4 class="popup__number-heading">difficulty</h4>
+                <p class="popup__number-heading uppercase">difficulty</p>
                 <form class="popup__number-form">
-                  <select class="selectLevel" name="Number" id="">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="difficult">Difficult</option>
+                  <select class="selectLevel selectD" name="Number" id="">
+                    <option class="selectO" value="easy">EASY</option>
+                    <option class="selectO" value="medium">MEDIUM</option>
+                    <option class="selectO" value="difficult">DIFFICULT</option>
                   </select>
                 </form>
                 <button class="popup__submit" type="submit">Start</button>
@@ -120,7 +118,7 @@
           <div class="submit overlaySubmit hidden">
             <div class="submit-popup">
               <div>
-                <div class="popup__close-btn">&times</div>
+                <div class="start__close-btn">&times</div>
                 <h4 class="submit-popup__heading">Are you sure?</h4>
                 <p class="submit-popup__message">
                   Please review your questions and make sure you've answered on
@@ -132,7 +130,7 @@
                 <button
                   class="submit-popup__btn submit-popup__btn--green results-page"
                 >
-                  <a href="#">Submit</a>
+                  <a href="#" class="btnDec">Submit</a>
                 </button>
               </div>
               <div></div>
@@ -243,17 +241,16 @@
     </div>
     <div class="resultsPage hidden">
       <div class="parent">
-        <div class="child retake">
-          <button>Retake Quiz</button>
+        <div class="child retake submit-popup__btn submit-popup__btn--darkgrey">
+          <a href="#" class="greyD">Try again</a>
         </div>
         <div class="results__score">
-          <h3>total score</h3>
-          <p>
-            <!-- ${model.state.score}/${model.state.questions.length} -->
-          </p>
+          <p></p>
         </div>
-        <div class="child another">
-          <button>Take another one😉</button>
+        <div
+          class="child another submit-popup__btn submit-popup__btn--darkgrey"
+        >
+          <a href="#" class="greyD"> new questions</a>
         </div>
       </div>
 
