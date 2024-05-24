@@ -34,8 +34,8 @@ class timerView extends View {
       timeLeft--;
     };
 
-    const totalTime = model.state.questions.length * 30; // 5 minutes in seconds
-    // const totalTime = 10; // 5 minutes in seconds
+    // const totalTime = model.state.questions.length * 30; // 5 minutes in seconds
+    const totalTime = 40; // 5 minutes in seconds
 
     let timeLeft = totalTime;
 
