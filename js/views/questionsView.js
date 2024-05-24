@@ -14,7 +14,6 @@ class questionsView extends View {
     overlay.classList.add("hidden");
   }
 
-
   renderSpinner() {
     const markup = ` <div class="spinner">
         <ion-icon class="spinner__icon" name="reload-outline"></ion-icon>
@@ -55,7 +54,7 @@ class questionsView extends View {
       <div class="options">
 
       <button class="question__options btn A" data-option="A">
-      <input type="radio" name="questionOptions" class="bigger-radio">
+      <input type="radio" name="questionOptions" class="bigger-radio ">
       <p>${question.optionA}</p> 
     </button>
           
