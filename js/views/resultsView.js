@@ -80,6 +80,7 @@ class resultView extends View {
 
   handleRetakeQuizByX() {
     popup__closebtn.addEventListener("click", function (e) {
+      console.log(popup__closebtn);
       restartSubmit.classList.add("hidden");
       overlayRetakeQuiz.classList.add("hidden");
     });
