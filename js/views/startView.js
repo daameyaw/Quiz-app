@@ -39,13 +39,17 @@ class startView extends View {
     });
   }
 
+  /**
+   * Handles the closing of the start popup when the close button is clicked.
+   * @param {Function} handler - The callback function to be executed when the close button is clicked.
+   */
   handleClosePopupBtn(handler) {
     closeBtn.addEventListener("click", function (e) {
-      console.log(this);
-      start.classList.add("hidden");
-      overlay.classList.add("hidden");
+      console.log(this); // 'this' refers to the closeBtn element
+      start.classList.add("hidden"); // Hides the start popup
+      overlay.classList.add("hidden"); // Hides the overlay
 
-      handler();
+      handler(); // Calls the provided callback function
     });
   }
 
