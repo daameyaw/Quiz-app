@@ -6,6 +6,7 @@ const overlaySubmit = document.querySelector(".overlaySubmit");
 const returnToQuiz = document.querySelector(".submit-popup__btn--violet");
 const popup__closebtn = document.querySelector(".popup__close-btn");
 const restartSubmit = document.querySelector(".restartSubmit");
+const goBackBtn = document.querySelector(".submit-popup__btn--violet");
 
 class submitView extends View {
   _parentElement = document.querySelector(".decision");
@@ -26,6 +27,8 @@ class submitView extends View {
 
   handleReturnToQuizByOverlay() {
     overlaySubmit.addEventListener("click", function (e) {
+      if (goBackBtn.disabled) return;
+      // console.log(goBackBtn.disabled);
       decisionPopup.classList.add("hidden");
       overlaySubmit.classList.add("hidden");
     });
