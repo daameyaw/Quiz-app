@@ -13,7 +13,7 @@ const questionEl = document.querySelector(".question");
 const timer = document.querySelector(".question__timer");
 const resultsPageLink = document.querySelector(".results-page");
 
-let category;
+// let category;
 const controlPopup = function () {};
 
 const controlSubmitBtn = function () {};
