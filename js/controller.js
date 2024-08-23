@@ -20,9 +20,7 @@ const controlSubmitBtn = function () {};
 
 const controlClosePopup = function () {};
 
-const controlRetakeQuiz = function () {
-  console.log(model.state);
-};
+const controlRetakeQuiz = function () {};
 function resetQuizState() {
   // Reset questions array
   model.state.questions = model.state.questions.map((question) => {

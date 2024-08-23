@@ -2,6 +2,8 @@ import View from "./view.js";
 import * as model from "../model.js";
 import timerView from "./timerView.js";
 
+const next = document.querySelector(".question__next");
+
 const decisionPopup = document.querySelector(".submit");
 const resultsPageLink = document.querySelector(".results-page");
 const dav = document.querySelector(".david");
@@ -92,6 +94,7 @@ class resultView extends View {
       parentElement.classList.add("hidden");
       container.classList.remove("hidden");
       decisionPopup.classList.add("hidden");
+      next.classList.add("hidden");
 
       handler();
     });
