@@ -143,12 +143,12 @@ class resultView extends View {
           ? `
         <ion-icon
           class="select__item-icon results__icon"
-          name="happy-outline"
+          name="checkmark-outline"
         ></ion-icon>
         `
           : `<ion-icon
         class="select__item-icon results__icon"
-        name="sad-outline"
+        name="close-outline"
       ></ion-icon>`
       }
       </div>
