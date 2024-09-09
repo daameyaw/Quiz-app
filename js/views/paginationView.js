@@ -24,7 +24,7 @@ class paginationView extends View {
       <div class="question__prevnext">
         <button data-goto ="${
           this._data.page + 1
-        }" class="btns question__prevnext--next">next</button>
+        }" class="btns question__prevnext--next">NEXT</button>
       </div> 
 `;
     }
@@ -44,7 +44,7 @@ class paginationView extends View {
       <div class="question__prevnext">
         <button data-goto ="${
           this._data.page + 1
-        }" class="btns question__prevnext--next">next</button>
+        }" class="btns question__prevnext--next">NEXT</button>
       </div>
 `;
     }
