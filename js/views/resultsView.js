@@ -163,7 +163,7 @@ class resultView extends View {
           <p class="results__text">${question.question}?</p>
 
 
-          <button class="results__options">
+          <button class="results__options color">
            <p >
               <span class="letter">
                <strong>A .</strong>
@@ -185,7 +185,7 @@ class resultView extends View {
           ${
             question.optionC
               ? `
-              <button class="results__options">
+              <button class="results__options color">
                 <p >
                  <span class="letter">
                   <strong>C .</strong>
@@ -198,7 +198,7 @@ class resultView extends View {
           ${
             question.optionD
               ? `
-              <button class="results__options">
+              <button class="results__options color">
                 <p >
                   <span class="letter">
                    <strong>D .</strong>
@@ -211,7 +211,7 @@ class resultView extends View {
           ${
             question.optionE
               ? `
-              <button class="results__options">
+              <button class="results__options color">
                <p >
                   <span class="letter">
                    <strong>E .</strong>
