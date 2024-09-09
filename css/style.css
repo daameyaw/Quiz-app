@@ -302,6 +302,12 @@ input[type="radio"].bigger-radio {
   /* Adjust the margin as needed */
   color: #444; }
 
+.color {
+  color: #444; }
+
+.color p {
+  color: #444; }
+
 .parent {
   display: flex;
   justify-content: space-around; }

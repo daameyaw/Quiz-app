@@ -173,7 +173,7 @@ class resultView extends View {
           </button>
 
 
-          <button class="results__options">
+          <button class="results__options color">
            <p class="answers">
              <span class="letter">
               <strong>B .</strong>
