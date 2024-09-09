@@ -12,6 +12,7 @@ const selectTopic = document.querySelector(".select");
 const questionEl = document.querySelector(".question");
 const timer = document.querySelector(".question__timer");
 const resultsPageLink = document.querySelector(".results-page");
+const next = document.querySelector(".question__next");
 
 // let category;
 const controlPopup = function () {};
@@ -42,6 +43,13 @@ function resetQuizState() {
 }
 
 const controlTakingAnotherQuiz = function () {
+  // Reset state properties
+  model.state.page = 1;
+  model.state.resultsPerPage = 1;
+  model.state.correctAnswer = "";
+  model.state.score = 0;
+  model.state.done = false;
+
   console.log("controlTakingAnotherQuiz");
   questionsView._clear();
   timer.classList.add("hidden");
@@ -95,6 +103,7 @@ const controlSubmit = async function () {
     timer.classList.remove("hidden");
     timerView.renderTimer();
     timerView.startTimer();
+    next.classList.remove("hidden");
 
     paginationView.renderPagination(model.state);
   } catch (error) {

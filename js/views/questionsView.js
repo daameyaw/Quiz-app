@@ -55,12 +55,13 @@ class questionsView extends View {
 
       <button class="question__options btn A" data-option="A">
       <input type="radio" name="questionOptions" class="bigger-radio ">
-      <p>${question.optionA}</p> 
+      <p >
+      ${question.optionA}</p> 
     </button>
           
     <button class="question__options btn B" data-option="B">
     <input type="radio" name="questionOptions" class="bigger-radio">
-    <p>${question.optionB}</p> 
+    <p > ${question.optionB}</p> 
   </button>
   
       ${
@@ -68,7 +69,7 @@ class questionsView extends View {
           ? `
           <button class="question__options btn C" data-option="C">
   <input type="radio" name="questionOptions" class="bigger-radio">
-  <p>${question.optionC}</p> 
+  <p >${question.optionC}</p> 
 </button>
 `
           : ""
@@ -77,9 +78,9 @@ class questionsView extends View {
       ${
         question.optionD
           ? `
-          <button class="question__options btn D" data-option="D">
+          <button  class="question__options btn D" data-option="D">
   <input type="radio" name="questionOptions" class="bigger-radio">
-  <p>${question.optionD}</p> 
+  <p >${question.optionD}</p> 
 </button>
 `
           : ""
@@ -88,9 +89,9 @@ class questionsView extends View {
       ${
         question.optionE
           ? `
-          <button class="question__options btn E" data-option="E">
+          <button  class="question__options btn E" data-option="E">
   <input type="radio" name="questionOptions" class="bigger-radio">
-  <p>${question.optionE}</p> 
+  <p >${question.optionE}</p> 
 </button>
  `
           : ""

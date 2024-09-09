@@ -59,6 +59,10 @@ input[type="radio"].bigger-radio {
   height: 15px;
 }
 
+.answers {
+  color: #444;
+}
+
 .letter {
   display: inline-block;
   width: 20px; /* or some fixed width */
@@ -110,6 +114,7 @@ input[type="radio"].bigger-radio {
 
 .question__options p {
   display: inline-block;
+  color: #444;
 }
 
 .hidden {
@@ -295,6 +300,7 @@ input[type="radio"].bigger-radio {
   display: flex;
   align-items: center;
   margin-bottom: 10px; /* Adjust the margin as needed */
+  color: #444;
 }
 
 .parent {

@@ -21,6 +21,7 @@ const restartQuizButton = document.querySelector(".restart-page");
 const quizStart = document.querySelector(".start-quiz");
 const selectTopic = document.querySelector(".select");
 const goBackBtn = document.querySelector(".submit-popup__btn--violet");
+// const next = document.querySelector(".question__next");
 
 const parentElement = document.querySelector(".resultsPage");
 
@@ -40,12 +41,14 @@ class resultView extends View {
   //Taking another quiz
   handleTakingAnotherQuiz(handler) {
     another.addEventListener("click", function () {
+      console.log(next);
       resultsPageLink.classList.remove("active");
       parentElement.classList.add("hidden");
       container.classList.remove("hidden");
       quizStart.classList.remove("hidden");
       selectTopic.classList.remove("hidden");
       decisionPopup.classList.add("hidden");
+      next.classList.add("hidden");
       goBackBtn.disabled = false;
 
       handler();
@@ -94,7 +97,7 @@ class resultView extends View {
       parentElement.classList.add("hidden");
       container.classList.remove("hidden");
       decisionPopup.classList.add("hidden");
-      next.classList.add("hidden");
+      // next.classList.add("hidden");
 
       handler();
     });
@@ -146,12 +149,12 @@ class resultView extends View {
           ? `
         <ion-icon
           class="select__item-icon results__icon"
-          name="checkmark-outline"
+          name="happy-outline"
         ></ion-icon>
         `
           : `<ion-icon
         class="select__item-icon results__icon"
-        name="close-outline"
+        name="sad-outline"
       ></ion-icon>`
       }
       </div>
@@ -161,7 +164,7 @@ class resultView extends View {
 
 
           <button class="results__options">
-           <p>
+           <p class="answers">
               <span class="letter">
                <strong>A .</strong>
               </span>
@@ -171,7 +174,7 @@ class resultView extends View {
 
 
           <button class="results__options">
-           <p>
+           <p class="answers">
              <span class="letter">
               <strong>B .</strong>
              </span>         
@@ -183,7 +186,7 @@ class resultView extends View {
             question.optionC
               ? `
               <button class="results__options">
-                <p>
+                <p class="answers">
                  <span class="letter">
                   <strong>C .</strong>
                  </span> 
@@ -196,7 +199,7 @@ class resultView extends View {
             question.optionD
               ? `
               <button class="results__options">
-                <p>
+                <p class="answers">
                   <span class="letter">
                    <strong>D .</strong>
                   </span>
@@ -209,7 +212,7 @@ class resultView extends View {
             question.optionE
               ? `
               <button class="results__options">
-               <p>
+               <p class="answers">
                   <span class="letter">
                    <strong>E .</strong>
                   </span>
